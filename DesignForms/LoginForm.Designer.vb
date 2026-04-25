@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Form1
+Partial Class LoginForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,31 +22,17 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        CheckBox1 = New CheckBox()
         SuspendLayout()
         ' 
-        ' CheckBox1
-        ' 
-        CheckBox1.AutoSize = True
-        CheckBox1.Location = New Point(64, 40)
-        CheckBox1.Name = "CheckBox1"
-        CheckBox1.Size = New Size(140, 34)
-        CheckBox1.TabIndex = 0
-        CheckBox1.Text = "CheckBox1"
-        CheckBox1.UseVisualStyleBackColor = True
-        ' 
-        ' Form1
+        ' LoginForm
         ' 
         AutoScaleDimensions = New SizeF(12F, 30F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
-        Controls.Add(CheckBox1)
-        Name = "Form1"
+        Name = "LoginForm"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "Salary Stream"
         ResumeLayout(False)
-        PerformLayout()
     End Sub
-
-    Friend WithEvents CheckBox1 As CheckBox
 
 End Class
