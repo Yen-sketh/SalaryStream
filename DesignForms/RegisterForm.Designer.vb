@@ -43,6 +43,8 @@ Partial Class RegisterForm
         Column5 = New DataGridViewTextBoxColumn()
         btnDone = New Button()
         btnClear = New Button()
+        Label6 = New Label()
+        txtboxSearchEmployee = New TextBox()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -146,7 +148,7 @@ Partial Class RegisterForm
         ' 
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column1, Column2, Column3, Column4, Column5})
-        DataGridView1.Location = New Point(25, 317)
+        DataGridView1.Location = New Point(25, 411)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 72
         DataGridView1.Size = New Size(945, 439)
@@ -205,11 +207,29 @@ Partial Class RegisterForm
         btnClear.Text = "Clear"
         btnClear.UseVisualStyleBackColor = True
         ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.Location = New Point(25, 313)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(176, 30)
+        Label6.TabIndex = 19
+        Label6.Text = "Search Employee:"
+        ' 
+        ' txtboxSearchEmployee
+        ' 
+        txtboxSearchEmployee.Location = New Point(207, 313)
+        txtboxSearchEmployee.Name = "txtboxSearchEmployee"
+        txtboxSearchEmployee.Size = New Size(175, 35)
+        txtboxSearchEmployee.TabIndex = 20
+        ' 
         ' RegisterForm
         ' 
         AutoScaleDimensions = New SizeF(12F, 30F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(982, 768)
+        ClientSize = New Size(1135, 904)
+        Controls.Add(txtboxSearchEmployee)
+        Controls.Add(Label6)
         Controls.Add(btnClear)
         Controls.Add(btnDone)
         Controls.Add(DataGridView1)
@@ -251,4 +271,6 @@ Partial Class RegisterForm
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents btnDone As Button
     Friend WithEvents btnClear As Button
+    Friend WithEvents Label6 As Label
+    Friend WithEvents txtboxSearchEmployee As TextBox
 End Class
