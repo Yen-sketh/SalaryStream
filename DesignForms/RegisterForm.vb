@@ -17,21 +17,13 @@
         txtboxPosition.Text = ""
         txtboxOvertime.Text = ""
         txtboxAttendance.Text = ""
+        txtboxSearchEmployee.Text = ""
+        checkboxEmployee.Checked = False
     End Sub
 
     Private Sub btnDone_Click(sender As Object, e As EventArgs) Handles btnDone.Click
         add_items()
         add_count()
-        search_employee(txtboxSearchEmployee.Text)
-
-
-
-
-    End Sub
-
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-
-
 
     End Sub
 
@@ -52,21 +44,29 @@
                                    attendaceArray(count), overtimeArray(count))
     End Sub
 
-    Sub search_employee(employee)
+    Sub search_employee()
 
 
-        Dim index As Integer = DataGridView1.CurrentRow.Index
-        Dim name As String = DataGridView1.Rows(index).Cells(0).Value
-        Dim position As String = DataGridView1.Rows(index).Cells(1).Value
-        Dim dailyRate As Double = DataGridView1.Rows(index).Cells(2).Value
-        Dim attendace As Integer = DataGridView1.Rows(index).Cells(3).Value
-        Dim overtime As Integer = DataGridView1.Rows(index).Cells(4).Value
-
+        For i As Integer = 0 To DataGridView1.Rows.Count - 1
+            If DataGridView1.Rows(i).Cells(0).Value = txtboxSearchEmployee.Text.ToUpper Then
+                DataGridView1.Rows(i).Visible = True
+            Else
+                DataGridView1.Rows(i).Visible = False
+            End If
+        Next
 
 
     End Sub
 
-    Private Sub txtboxName_TextChanged(sender As Object, e As EventArgs) Handles txtboxName.TextChanged
+    Private Sub txtboxSearchEmployee_TextChanged(sender As Object, e As EventArgs) Handles txtboxSearchEmployee.TextChanged
+        If checkBoxEmployee.Checked Then
+            search_employee()
 
+        ElseIf checkboxEmployee.Checked = False Then
+
+            For i As Integer = 0 To DataGridView1.Rows.Count - 1
+                DataGridView1.Rows(i).Visible = True
+            Next
+        End If
     End Sub
 End Class

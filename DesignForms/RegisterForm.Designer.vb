@@ -45,6 +45,7 @@ Partial Class RegisterForm
         btnClear = New Button()
         Label6 = New Label()
         txtboxSearchEmployee = New TextBox()
+        checkboxEmployee = New CheckBox()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -146,6 +147,7 @@ Partial Class RegisterForm
         ' 
         ' DataGridView1
         ' 
+        DataGridView1.AllowUserToAddRows = False
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column1, Column2, Column3, Column4, Column5})
         DataGridView1.Location = New Point(25, 411)
@@ -223,11 +225,21 @@ Partial Class RegisterForm
         txtboxSearchEmployee.Size = New Size(175, 35)
         txtboxSearchEmployee.TabIndex = 20
         ' 
+        ' checkboxEmployee
+        ' 
+        checkboxEmployee.AutoSize = True
+        checkboxEmployee.Location = New Point(388, 322)
+        checkboxEmployee.Name = "checkboxEmployee"
+        checkboxEmployee.Size = New Size(22, 21)
+        checkboxEmployee.TabIndex = 21
+        checkboxEmployee.UseVisualStyleBackColor = True
+        ' 
         ' RegisterForm
         ' 
         AutoScaleDimensions = New SizeF(12F, 30F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1135, 904)
+        ClientSize = New Size(993, 895)
+        Controls.Add(checkboxEmployee)
         Controls.Add(txtboxSearchEmployee)
         Controls.Add(Label6)
         Controls.Add(btnClear)
@@ -273,4 +285,5 @@ Partial Class RegisterForm
     Friend WithEvents btnClear As Button
     Friend WithEvents Label6 As Label
     Friend WithEvents txtboxSearchEmployee As TextBox
+    Friend WithEvents checkboxEmployee As CheckBox
 End Class
