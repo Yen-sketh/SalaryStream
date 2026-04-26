@@ -9,11 +9,13 @@
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         Dim username As String = "Admin"
-        Dim password As String = "00000000"
+        Dim password As String = "000"
 
         If TextBox1.Text = username And TextBox2.Text = password Then
             MessageBox.Show("Login Successful!", "Payroll System", MessageBoxButtons.OK, MessageBoxIcon.Information)
             'sa part nato. mag oopen sya ng bagong form after mag log in
+            RegisterForm.Show()
+            Me.Hide()
 
 
         Else
