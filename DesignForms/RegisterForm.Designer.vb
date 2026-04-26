@@ -35,13 +35,14 @@ Partial Class RegisterForm
         z = New Label()
         Label5 = New Label()
         ContextMenuStrip1 = New ContextMenuStrip(components)
-        TextBox1 = New TextBox()
         DataGridView1 = New DataGridView()
         Column1 = New DataGridViewTextBoxColumn()
         Column2 = New DataGridViewTextBoxColumn()
         Column3 = New DataGridViewTextBoxColumn()
         Column4 = New DataGridViewTextBoxColumn()
         Column5 = New DataGridViewTextBoxColumn()
+        btnDone = New Button()
+        btnClear = New Button()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -141,13 +142,6 @@ Partial Class RegisterForm
         ContextMenuStrip1.Name = "ContextMenuStrip1"
         ContextMenuStrip1.Size = New Size(61, 4)
         ' 
-        ' TextBox1
-        ' 
-        TextBox1.Location = New Point(25, 250)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(915, 35)
-        TextBox1.TabIndex = 13
-        ' 
         ' DataGridView1
         ' 
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -193,13 +187,32 @@ Partial Class RegisterForm
         Column5.Name = "Column5"
         Column5.Width = 175
         ' 
+        ' btnDone
+        ' 
+        btnDone.Location = New Point(25, 246)
+        btnDone.Name = "btnDone"
+        btnDone.Size = New Size(448, 40)
+        btnDone.TabIndex = 17
+        btnDone.Text = "Done"
+        btnDone.UseVisualStyleBackColor = True
+        ' 
+        ' btnClear
+        ' 
+        btnClear.Location = New Point(502, 246)
+        btnClear.Name = "btnClear"
+        btnClear.Size = New Size(468, 40)
+        btnClear.TabIndex = 18
+        btnClear.Text = "Clear"
+        btnClear.UseVisualStyleBackColor = True
+        ' 
         ' RegisterForm
         ' 
         AutoScaleDimensions = New SizeF(12F, 30F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(982, 768)
+        Controls.Add(btnClear)
+        Controls.Add(btnDone)
         Controls.Add(DataGridView1)
-        Controls.Add(TextBox1)
         Controls.Add(Label5)
         Controls.Add(txtboxOvertime)
         Controls.Add(z)
@@ -230,11 +243,12 @@ Partial Class RegisterForm
     Friend WithEvents z As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
-    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents btnDone As Button
+    Friend WithEvents btnClear As Button
 End Class
