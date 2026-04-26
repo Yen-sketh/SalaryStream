@@ -65,4 +65,8 @@
 
 
     End Sub
+
+    Private Sub txtboxName_TextChanged(sender As Object, e As EventArgs) Handles txtboxName.TextChanged
+
+    End Sub
 End Class
