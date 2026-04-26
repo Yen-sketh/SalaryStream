@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class RegisterForm
+Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,16 +22,28 @@ Partial Class RegisterForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Button1 = New Button()
         SuspendLayout()
         ' 
-        ' RegisterForm
+        ' Button1
+        ' 
+        Button1.Location = New Point(401, 155)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(94, 29)
+        Button1.TabIndex = 0
+        Button1.Text = "Button1"
+        Button1.UseVisualStyleBackColor = True
+        ' 
+        ' Form1
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(533, 300)
-        Margin = New Padding(2, 2, 2, 2)
-        Name = "RegisterForm"
-        Text = "Register Form"
+        ClientSize = New Size(558, 462)
+        Controls.Add(Button1)
+        Name = "Form1"
+        Text = "Form1"
         ResumeLayout(False)
     End Sub
+
+    Friend WithEvents Button1 As Button
 End Class
