@@ -22,6 +22,7 @@ Partial Class RegisterForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         Label1 = New Label()
         Label2 = New Label()
         Label3 = New Label()
@@ -30,14 +31,17 @@ Partial Class RegisterForm
         txtboxPosition = New TextBox()
         txtboxAttendance = New TextBox()
         txtboxDailyRate = New TextBox()
-        TextBox1 = New TextBox()
+        txtboxOvertime = New TextBox()
+        z = New Label()
         Label5 = New Label()
+        ContextMenuStrip1 = New ContextMenuStrip(components)
+        TextBox1 = New TextBox()
         SuspendLayout()
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(9, 95)
+        Label1.Location = New Point(8, 99)
         Label1.Name = "Label1"
         Label1.Size = New Size(74, 30)
         Label1.TabIndex = 0
@@ -46,7 +50,7 @@ Partial Class RegisterForm
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(9, 173)
+        Label2.Location = New Point(8, 177)
         Label2.Name = "Label2"
         Label2.Size = New Size(91, 30)
         Label2.TabIndex = 1
@@ -55,7 +59,7 @@ Partial Class RegisterForm
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(343, 95)
+        Label3.Location = New Point(342, 99)
         Label3.Name = "Label3"
         Label3.Size = New Size(112, 30)
         Label3.TabIndex = 2
@@ -64,7 +68,7 @@ Partial Class RegisterForm
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(343, 173)
+        Label4.Location = New Point(342, 177)
         Label4.Name = "Label4"
         Label4.Size = New Size(125, 30)
         Label4.TabIndex = 3
@@ -72,55 +76,80 @@ Partial Class RegisterForm
         ' 
         ' txtboxName
         ' 
-        txtboxName.Location = New Point(89, 95)
+        txtboxName.Location = New Point(88, 99)
         txtboxName.Name = "txtboxName"
         txtboxName.Size = New Size(175, 35)
         txtboxName.TabIndex = 4
         ' 
         ' txtboxPosition
         ' 
-        txtboxPosition.Location = New Point(106, 170)
+        txtboxPosition.Location = New Point(105, 174)
         txtboxPosition.Name = "txtboxPosition"
         txtboxPosition.Size = New Size(175, 35)
         txtboxPosition.TabIndex = 5
         ' 
         ' txtboxAttendance
         ' 
-        txtboxAttendance.Location = New Point(474, 173)
+        txtboxAttendance.Location = New Point(473, 177)
         txtboxAttendance.Name = "txtboxAttendance"
         txtboxAttendance.Size = New Size(175, 35)
         txtboxAttendance.TabIndex = 6
         ' 
         ' txtboxDailyRate
         ' 
-        txtboxDailyRate.Location = New Point(474, 95)
+        txtboxDailyRate.Location = New Point(473, 99)
         txtboxDailyRate.Name = "txtboxDailyRate"
         txtboxDailyRate.Size = New Size(175, 35)
         txtboxDailyRate.TabIndex = 7
         ' 
-        ' TextBox1
+        ' txtboxOvertime
         ' 
-        TextBox1.Location = New Point(796, 98)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(150, 35)
-        TextBox1.TabIndex = 9
+        txtboxOvertime.Location = New Point(773, 102)
+        txtboxOvertime.Name = "txtboxOvertime"
+        txtboxOvertime.Size = New Size(150, 35)
+        txtboxOvertime.TabIndex = 9
+        ' 
+        ' z
+        ' 
+        z.AutoSize = True
+        z.Location = New Point(664, 102)
+        z.Name = "z"
+        z.Size = New Size(103, 30)
+        z.TabIndex = 8
+        z.Text = "Overtime:"
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(665, 98)
+        Label5.Font = New Font("Segoe UI", 20F)
+        Label5.Location = New Point(316, 9)
         Label5.Name = "Label5"
-        Label5.Size = New Size(125, 30)
-        Label5.TabIndex = 8
-        Label5.Text = "Attendance:"
+        Label5.Size = New Size(307, 62)
+        Label5.TabIndex = 10
+        Label5.Text = "Salary Stream"
+        ' 
+        ' ContextMenuStrip1
+        ' 
+        ContextMenuStrip1.ImageScalingSize = New Size(28, 28)
+        ContextMenuStrip1.Name = "ContextMenuStrip1"
+        ContextMenuStrip1.Size = New Size(61, 4)
+        ' 
+        ' TextBox1
+        ' 
+        TextBox1.Location = New Point(25, 250)
+        TextBox1.Name = "TextBox1"
+        TextBox1.Size = New Size(915, 35)
+        TextBox1.TabIndex = 13
         ' 
         ' RegisterForm
         ' 
         AutoScaleDimensions = New SizeF(12F, 30F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1099, 340)
+        ClientSize = New Size(982, 768)
         Controls.Add(TextBox1)
         Controls.Add(Label5)
+        Controls.Add(txtboxOvertime)
+        Controls.Add(z)
         Controls.Add(txtboxDailyRate)
         Controls.Add(txtboxAttendance)
         Controls.Add(txtboxPosition)
@@ -143,6 +172,9 @@ Partial Class RegisterForm
     Friend WithEvents txtboxPosition As TextBox
     Friend WithEvents txtboxAttendance As TextBox
     Friend WithEvents txtboxDailyRate As TextBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtboxOvertime As TextBox
+    Friend WithEvents z As Label
     Friend WithEvents Label5 As Label
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents TextBox1 As TextBox
 End Class
