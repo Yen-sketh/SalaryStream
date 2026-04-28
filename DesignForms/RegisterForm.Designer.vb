@@ -46,6 +46,9 @@ Partial Class RegisterForm
         Label6 = New Label()
         txtboxSearchEmployee = New TextBox()
         checkboxEmployee = New CheckBox()
+        lbl = New Label()
+        checkboxEmpPos = New CheckBox()
+        txtboxEmpPos = New TextBox()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -212,7 +215,7 @@ Partial Class RegisterForm
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(8, 319)
+        Label6.Location = New Point(25, 313)
         Label6.Name = "Label6"
         Label6.Size = New Size(176, 30)
         Label6.TabIndex = 19
@@ -220,7 +223,7 @@ Partial Class RegisterForm
         ' 
         ' txtboxSearchEmployee
         ' 
-        txtboxSearchEmployee.Location = New Point(195, 313)
+        txtboxSearchEmployee.Location = New Point(207, 315)
         txtboxSearchEmployee.Name = "txtboxSearchEmployee"
         txtboxSearchEmployee.Size = New Size(175, 35)
         txtboxSearchEmployee.TabIndex = 20
@@ -228,17 +231,45 @@ Partial Class RegisterForm
         ' checkboxEmployee
         ' 
         checkboxEmployee.AutoSize = True
-        checkboxEmployee.Location = New Point(376, 322)
+        checkboxEmployee.Location = New Point(388, 327)
         checkboxEmployee.Name = "checkboxEmployee"
         checkboxEmployee.Size = New Size(22, 21)
         checkboxEmployee.TabIndex = 21
         checkboxEmployee.UseVisualStyleBackColor = True
         ' 
+        ' lbl
+        ' 
+        lbl.AutoSize = True
+        lbl.Location = New Point(25, 369)
+        lbl.Name = "lbl"
+        lbl.Size = New Size(283, 30)
+        lbl.TabIndex = 22
+        lbl.Text = "Search by Employee Position:"
+        ' 
+        ' checkboxEmpPos
+        ' 
+        checkboxEmpPos.AutoSize = True
+        checkboxEmpPos.Location = New Point(495, 379)
+        checkboxEmpPos.Name = "checkboxEmpPos"
+        checkboxEmpPos.Size = New Size(22, 21)
+        checkboxEmpPos.TabIndex = 24
+        checkboxEmpPos.UseVisualStyleBackColor = True
+        ' 
+        ' txtboxEmpPos
+        ' 
+        txtboxEmpPos.Location = New Point(314, 370)
+        txtboxEmpPos.Name = "txtboxEmpPos"
+        txtboxEmpPos.Size = New Size(175, 35)
+        txtboxEmpPos.TabIndex = 23
+        ' 
         ' RegisterForm
         ' 
         AutoScaleDimensions = New SizeF(12F, 30F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(987, 904)
+        ClientSize = New Size(993, 895)
+        Controls.Add(checkboxEmpPos)
+        Controls.Add(txtboxEmpPos)
+        Controls.Add(lbl)
         Controls.Add(checkboxEmployee)
         Controls.Add(txtboxSearchEmployee)
         Controls.Add(Label6)
@@ -286,4 +317,7 @@ Partial Class RegisterForm
     Friend WithEvents Label6 As Label
     Friend WithEvents txtboxSearchEmployee As TextBox
     Friend WithEvents checkboxEmployee As CheckBox
+    Friend WithEvents lbl As Label
+    Friend WithEvents checkboxEmpPos As CheckBox
+    Friend WithEvents txtboxEmpPos As TextBox
 End Class
