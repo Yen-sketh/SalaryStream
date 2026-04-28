@@ -46,7 +46,6 @@
 
     Sub search_employee()
 
-
         For i As Integer = 0 To DataGridView1.Rows.Count - 1
             If DataGridView1.Rows(i).Cells(0).Value = txtboxSearchEmployee.Text.ToUpper Then
                 DataGridView1.Rows(i).Visible = True
@@ -58,13 +57,39 @@
 
     End Sub
 
+    Sub search_employee_position()
+
+        For i As Integer = 0 To DataGridView1.Rows.Count - 1
+            If DataGridView1.Rows(i).Cells(1).Value = txtboxEmpPos.Text Then
+                DataGridView1.Rows(i).Visible = True
+            Else
+                DataGridView1.Rows(i).Visible = False
+            End If
+        Next
+
+    End Sub
+
     Private Sub txtboxSearchEmployee_TextChanged(sender As Object, e As EventArgs) Handles txtboxSearchEmployee.TextChanged
         If checkBoxEmployee.Checked Then
             search_employee()
 
         ElseIf checkboxEmployee.Checked = False Then
 
-            For i As Integer = 0 To DataGridView1.Rows.Count - 1
+            For i = 0 To DataGridView1.Rows.Count - 1
+                DataGridView1.Rows(i).Visible = True
+            Next
+        End If
+
+
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txtboxEmpPos.TextChanged
+        If checkboxEmpPos.Checked Then
+            search_employee_position()
+
+        ElseIf checkboxEmployee.Checked = False Then
+
+            For i = 0 To DataGridView1.Rows.Count - 1
                 DataGridView1.Rows(i).Visible = True
             Next
         End If
