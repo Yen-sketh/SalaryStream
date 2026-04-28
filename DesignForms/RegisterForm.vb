@@ -70,7 +70,7 @@
     End Sub
 
     Private Sub txtboxSearchEmployee_TextChanged(sender As Object, e As EventArgs) Handles txtboxSearchEmployee.TextChanged
-        If checkBoxEmployee.Checked Then
+        If checkboxEmployee.Checked Then
             search_employee()
 
         ElseIf checkboxEmployee.Checked = False Then
