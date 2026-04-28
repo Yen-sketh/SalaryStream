@@ -69,29 +69,14 @@
 
     End Sub
 
-    Private Sub txtboxSearchEmployee_TextChanged(sender As Object, e As EventArgs) Handles txtboxSearchEmployee.TextChanged
-        If checkboxEmployee.Checked Then
-            search_employee()
-
-        ElseIf checkboxEmployee.Checked = False Then
-
-            For i = 0 To DataGridView1.Rows.Count - 1
-                DataGridView1.Rows(i).Visible = True
-            Next
-        End If
+    Dim index As Integer = DataGridView1.CurrentRow.Index
+    Dim name As String = DataGridView1.Rows(index).Cells(0).Value
+    Dim position As String = DataGridView1.Rows(index).Cells(1).Value
+    Dim dailyRate As Double = DataGridView1.Rows(index).Cells(2).Value
+    Dim attendace As Integer = DataGridView1.Rows(index).Cells(3).Value
+    Dim overtime As Integer = DataGridView1.Rows(index).Cells(4).Value
 
 
-    End Sub
 
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txtboxEmpPos.TextChanged
-        If checkboxEmpPos.Checked Then
-            search_employee_position()
 
-        ElseIf checkboxEmployee.Checked = False Then
-
-            For i = 0 To DataGridView1.Rows.Count - 1
-                DataGridView1.Rows(i).Visible = True
-            Next
-        End If
-    End Sub
 End Class

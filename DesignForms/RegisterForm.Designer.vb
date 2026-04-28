@@ -135,7 +135,7 @@ Partial Class RegisterForm
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Font = New Font("Segoe UI", 20F)
+        Label5.Font = New Font("Segoe UI", 20.0F)
         Label5.Location = New Point(316, 9)
         Label5.Name = "Label5"
         Label5.Size = New Size(307, 62)
@@ -264,7 +264,7 @@ Partial Class RegisterForm
         ' 
         ' RegisterForm
         ' 
-        AutoScaleDimensions = New SizeF(12F, 30F)
+        AutoScaleDimensions = New SizeF(12.0F, 30.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(993, 895)
         Controls.Add(checkboxEmpPos)
@@ -287,7 +287,7 @@ Partial Class RegisterForm
         Controls.Add(Label3)
         Controls.Add(Label2)
         Controls.Add(Label1)
-        Name = "RegisterForm"
+        name = "RegisterForm"
         Text = "Register Employee"
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
