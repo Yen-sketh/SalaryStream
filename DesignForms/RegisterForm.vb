@@ -46,15 +46,6 @@
 
     Sub search_employee()
 
-        'This is for selecting index'
-
-        ' Dim index As Integer = DataGridView1.CurrentRow.Index
-        'Dim name As String = DataGridView1.Rows(index).Cells(0).Value
-        'Dim position As String = DataGridView1.Rows(index).Cells(1).Value
-        ' Dim dailyRate As Double = DataGridView1.Rows(index).Cells(2).Value
-        'Dim attendace As Integer = DataGridView1.Rows(index).Cells(3).Value
-        'Dim overtime As Integer = DataGridView1.Rows(index).Cells(4).Value
-
 
         For i As Integer = 0 To DataGridView1.Rows.Count - 1
             If DataGridView1.Rows(i).Cells(0).Value = txtboxSearchEmployee.Text.ToUpper Then
