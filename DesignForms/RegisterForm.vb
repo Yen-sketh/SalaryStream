@@ -81,4 +81,16 @@
         End If
     End Sub
 
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txtboxEmpPos.TextChanged
+        If checkboxEmpPos.Checked Then
+            search_employee_position()
+
+        ElseIf checkboxEmployee.Checked = False Then
+
+            For i = 0 To DataGridView1.Rows.Count - 1
+                DataGridView1.Rows(i).Visible = True
+            Next
+        End If
+    End Sub
 End Class
