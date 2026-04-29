@@ -28,7 +28,6 @@ Partial Class LoginForm
         TextBox1 = New TextBox()
         TextBox2 = New TextBox()
         btnClear = New Button()
-        btnRegister = New Button()
         btnLogin = New Button()
         SuspendLayout()
         ' 
@@ -76,25 +75,16 @@ Partial Class LoginForm
         ' 
         ' btnClear
         ' 
-        btnClear.Location = New Point(28, 140)
+        btnClear.Location = New Point(29, 135)
         btnClear.Name = "btnClear"
         btnClear.Size = New Size(130, 40)
         btnClear.TabIndex = 5
         btnClear.Text = "Clear"
         btnClear.UseVisualStyleBackColor = True
         ' 
-        ' btnRegister
-        ' 
-        btnRegister.Location = New Point(165, 140)
-        btnRegister.Name = "btnRegister"
-        btnRegister.Size = New Size(130, 40)
-        btnRegister.TabIndex = 6
-        btnRegister.Text = "Register"
-        btnRegister.UseVisualStyleBackColor = True
-        ' 
         ' btnLogin
         ' 
-        btnLogin.Location = New Point(302, 140)
+        btnLogin.Location = New Point(263, 135)
         btnLogin.Name = "btnLogin"
         btnLogin.Size = New Size(130, 40)
         btnLogin.TabIndex = 7
@@ -107,7 +97,6 @@ Partial Class LoginForm
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(478, 206)
         Controls.Add(btnLogin)
-        Controls.Add(btnRegister)
         Controls.Add(btnClear)
         Controls.Add(TextBox2)
         Controls.Add(TextBox1)
@@ -127,7 +116,6 @@ Partial Class LoginForm
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents btnClear As Button
-    Friend WithEvents btnRegister As Button
     Friend WithEvents btnLogin As Button
 
 End Class

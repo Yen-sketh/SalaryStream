@@ -32,4 +32,8 @@
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
         'test'
     End Sub
+
+    Private Sub btnRegister_Click(sender As Object, e As EventArgs)
+
+    End Sub
 End Class
