@@ -58,9 +58,8 @@
     End Sub
 
     Sub search_employee_position()
-
         For i As Integer = 0 To DataGridView1.Rows.Count - 1
-            If DataGridView1.Rows(i).Cells(1).Value = txtboxEmpPos.Text Then
+            If DataGridView1.Rows(i).Cells(1).Value = txtboxEmpPos.Text.ToUpper Then
                 DataGridView1.Rows(i).Visible = True
             Else
                 DataGridView1.Rows(i).Visible = False

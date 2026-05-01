@@ -135,7 +135,7 @@ Partial Class RegisterForm
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Font = New Font("Segoe UI", 20.0F)
+        Label5.Font = New Font("Segoe UI", 20F)
         Label5.Location = New Point(316, 9)
         Label5.Name = "Label5"
         Label5.Size = New Size(307, 62)
@@ -153,10 +153,10 @@ Partial Class RegisterForm
         DataGridView1.AllowUserToAddRows = False
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column1, Column2, Column3, Column4, Column5})
-        DataGridView1.Location = New Point(25, 411)
+        DataGridView1.Location = New Point(30, 358)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 72
-        DataGridView1.Size = New Size(945, 439)
+        DataGridView1.Size = New Size(964, 394)
         DataGridView1.TabIndex = 14
         ' 
         ' Column1
@@ -215,7 +215,7 @@ Partial Class RegisterForm
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(25, 313)
+        Label6.Location = New Point(25, 295)
         Label6.Name = "Label6"
         Label6.Size = New Size(176, 30)
         Label6.TabIndex = 19
@@ -223,7 +223,7 @@ Partial Class RegisterForm
         ' 
         ' txtboxSearchEmployee
         ' 
-        txtboxSearchEmployee.Location = New Point(207, 315)
+        txtboxSearchEmployee.Location = New Point(212, 292)
         txtboxSearchEmployee.Name = "txtboxSearchEmployee"
         txtboxSearchEmployee.Size = New Size(175, 35)
         txtboxSearchEmployee.TabIndex = 20
@@ -231,7 +231,7 @@ Partial Class RegisterForm
         ' checkboxEmployee
         ' 
         checkboxEmployee.AutoSize = True
-        checkboxEmployee.Location = New Point(388, 327)
+        checkboxEmployee.Location = New Point(393, 304)
         checkboxEmployee.Name = "checkboxEmployee"
         checkboxEmployee.Size = New Size(22, 21)
         checkboxEmployee.TabIndex = 21
@@ -240,7 +240,7 @@ Partial Class RegisterForm
         ' lbl
         ' 
         lbl.AutoSize = True
-        lbl.Location = New Point(25, 369)
+        lbl.Location = New Point(502, 292)
         lbl.Name = "lbl"
         lbl.Size = New Size(283, 30)
         lbl.TabIndex = 22
@@ -249,7 +249,7 @@ Partial Class RegisterForm
         ' checkboxEmpPos
         ' 
         checkboxEmpPos.AutoSize = True
-        checkboxEmpPos.Location = New Point(495, 379)
+        checkboxEmpPos.Location = New Point(972, 301)
         checkboxEmpPos.Name = "checkboxEmpPos"
         checkboxEmpPos.Size = New Size(22, 21)
         checkboxEmpPos.TabIndex = 24
@@ -257,16 +257,16 @@ Partial Class RegisterForm
         ' 
         ' txtboxEmpPos
         ' 
-        txtboxEmpPos.Location = New Point(314, 370)
+        txtboxEmpPos.Location = New Point(791, 292)
         txtboxEmpPos.Name = "txtboxEmpPos"
         txtboxEmpPos.Size = New Size(175, 35)
         txtboxEmpPos.TabIndex = 23
         ' 
         ' RegisterForm
         ' 
-        AutoScaleDimensions = New SizeF(12.0F, 30.0F)
+        AutoScaleDimensions = New SizeF(12F, 30F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(993, 895)
+        ClientSize = New Size(1047, 879)
         Controls.Add(checkboxEmpPos)
         Controls.Add(txtboxEmpPos)
         Controls.Add(lbl)
@@ -287,7 +287,8 @@ Partial Class RegisterForm
         Controls.Add(Label3)
         Controls.Add(Label2)
         Controls.Add(Label1)
-        name = "RegisterForm"
+        Name = "RegisterForm"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "Register Employee"
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
