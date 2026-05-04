@@ -1,12 +1,17 @@
 ﻿Public Class RegisterForm
-    Dim nameArray(99) As String
-    Dim positionArray(99) As String
-    Dim dailyRateArray(99) As Double
-    Dim attendaceArray(99) As Integer
-    Dim overtimeArray(99) As Double
 
-    Dim count As Integer = 0
-    Private Sub RegisterForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Shared sssStatus(99) As Boolean
+    Public Shared philHealthStatus(99) As Boolean
+    Public Shared pagibigStatus(99) As Boolean
+
+    Public Shared nameArray(99) As String
+    Public Shared positionArray(99) As String
+    Public Shared dailyRateArray(99) As Double
+    Public Shared attendaceArray(99) As Integer
+    Public Shared overtimeArray(99) As Double
+
+    Public Shared count As Integer = 0
+    Public Sub RegisterForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 
     End Sub
@@ -38,6 +43,10 @@
         dailyRateArray(count) = txtboxDailyRate.Text
         attendaceArray(count) = txtboxAttendance.Text
         overtimeArray(count) = txtboxOvertime.Text
+
+        sssStatus(count) = chBoxSSS.Checked
+        philHealthStatus(count) = chBoxPhilHealth.Checked
+        pagibigStatus(count) = chBoxPagibig.Checked
 
 
         DataGridView1.Rows.Add(nameArray(count), positionArray(count), dailyRateArray(count),
@@ -92,4 +101,11 @@
             Next
         End If
     End Sub
+
+    Private Sub BtnPayRoll_Click(sender As Object, e As EventArgs) Handles BtnPayRoll.Click
+        PayrollForm.Show()
+        Me.Hide()
+    End Sub
+
+
 End Class
