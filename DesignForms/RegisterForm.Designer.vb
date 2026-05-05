@@ -49,13 +49,20 @@ Partial Class RegisterForm
         lbl = New Label()
         checkboxEmpPos = New CheckBox()
         txtboxEmpPos = New TextBox()
+        BtnPayRoll = New Button()
+        chBoxSSS = New CheckBox()
+        chBoxPhilHealth = New CheckBox()
+        chBoxPagibig = New CheckBox()
+        Label7 = New Label()
+        Button1 = New Button()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(8, 99)
+        Label1.Location = New Point(8, 98)
+        Label1.Margin = New Padding(2, 0, 2, 0)
         Label1.Name = "Label1"
         Label1.Size = New Size(74, 30)
         Label1.TabIndex = 0
@@ -64,7 +71,8 @@ Partial Class RegisterForm
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(8, 177)
+        Label2.Location = New Point(8, 178)
+        Label2.Margin = New Padding(2, 0, 2, 0)
         Label2.Name = "Label2"
         Label2.Size = New Size(91, 30)
         Label2.TabIndex = 1
@@ -73,7 +81,8 @@ Partial Class RegisterForm
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(342, 99)
+        Label3.Location = New Point(342, 98)
+        Label3.Margin = New Padding(2, 0, 2, 0)
         Label3.Name = "Label3"
         Label3.Size = New Size(112, 30)
         Label3.TabIndex = 2
@@ -82,7 +91,8 @@ Partial Class RegisterForm
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(342, 177)
+        Label4.Location = New Point(342, 178)
+        Label4.Margin = New Padding(2, 0, 2, 0)
         Label4.Name = "Label4"
         Label4.Size = New Size(125, 30)
         Label4.TabIndex = 3
@@ -90,35 +100,40 @@ Partial Class RegisterForm
         ' 
         ' txtboxName
         ' 
-        txtboxName.Location = New Point(88, 99)
+        txtboxName.Location = New Point(88, 98)
+        txtboxName.Margin = New Padding(2)
         txtboxName.Name = "txtboxName"
-        txtboxName.Size = New Size(175, 35)
+        txtboxName.Size = New Size(174, 35)
         txtboxName.TabIndex = 4
         ' 
         ' txtboxPosition
         ' 
-        txtboxPosition.Location = New Point(105, 174)
+        txtboxPosition.Location = New Point(106, 174)
+        txtboxPosition.Margin = New Padding(2)
         txtboxPosition.Name = "txtboxPosition"
-        txtboxPosition.Size = New Size(175, 35)
+        txtboxPosition.Size = New Size(174, 35)
         txtboxPosition.TabIndex = 5
         ' 
         ' txtboxAttendance
         ' 
-        txtboxAttendance.Location = New Point(473, 177)
+        txtboxAttendance.Location = New Point(473, 178)
+        txtboxAttendance.Margin = New Padding(2)
         txtboxAttendance.Name = "txtboxAttendance"
-        txtboxAttendance.Size = New Size(175, 35)
+        txtboxAttendance.Size = New Size(174, 35)
         txtboxAttendance.TabIndex = 6
         ' 
         ' txtboxDailyRate
         ' 
-        txtboxDailyRate.Location = New Point(473, 99)
+        txtboxDailyRate.Location = New Point(473, 98)
+        txtboxDailyRate.Margin = New Padding(2)
         txtboxDailyRate.Name = "txtboxDailyRate"
-        txtboxDailyRate.Size = New Size(175, 35)
+        txtboxDailyRate.Size = New Size(174, 35)
         txtboxDailyRate.TabIndex = 7
         ' 
         ' txtboxOvertime
         ' 
         txtboxOvertime.Location = New Point(773, 102)
+        txtboxOvertime.Margin = New Padding(2)
         txtboxOvertime.Name = "txtboxOvertime"
         txtboxOvertime.Size = New Size(150, 35)
         txtboxOvertime.TabIndex = 9
@@ -127,6 +142,7 @@ Partial Class RegisterForm
         ' 
         z.AutoSize = True
         z.Location = New Point(664, 102)
+        z.Margin = New Padding(2, 0, 2, 0)
         z.Name = "z"
         z.Size = New Size(103, 30)
         z.TabIndex = 8
@@ -136,7 +152,8 @@ Partial Class RegisterForm
         ' 
         Label5.AutoSize = True
         Label5.Font = New Font("Segoe UI", 20F)
-        Label5.Location = New Point(316, 9)
+        Label5.Location = New Point(427, 11)
+        Label5.Margin = New Padding(2, 0, 2, 0)
         Label5.Name = "Label5"
         Label5.Size = New Size(307, 62)
         Label5.TabIndex = 10
@@ -153,10 +170,11 @@ Partial Class RegisterForm
         DataGridView1.AllowUserToAddRows = False
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column1, Column2, Column3, Column4, Column5})
-        DataGridView1.Location = New Point(30, 358)
+        DataGridView1.Location = New Point(36, 366)
+        DataGridView1.Margin = New Padding(2)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 72
-        DataGridView1.Size = New Size(964, 394)
+        DataGridView1.Size = New Size(1138, 350)
         DataGridView1.TabIndex = 14
         ' 
         ' Column1
@@ -197,6 +215,7 @@ Partial Class RegisterForm
         ' btnDone
         ' 
         btnDone.Location = New Point(25, 246)
+        btnDone.Margin = New Padding(2)
         btnDone.Name = "btnDone"
         btnDone.Size = New Size(448, 40)
         btnDone.TabIndex = 17
@@ -206,6 +225,7 @@ Partial Class RegisterForm
         ' btnClear
         ' 
         btnClear.Location = New Point(502, 246)
+        btnClear.Margin = New Padding(2)
         btnClear.Name = "btnClear"
         btnClear.Size = New Size(468, 40)
         btnClear.TabIndex = 18
@@ -215,7 +235,8 @@ Partial Class RegisterForm
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(25, 295)
+        Label6.Location = New Point(25, 305)
+        Label6.Margin = New Padding(2, 0, 2, 0)
         Label6.Name = "Label6"
         Label6.Size = New Size(176, 30)
         Label6.TabIndex = 19
@@ -223,15 +244,17 @@ Partial Class RegisterForm
         ' 
         ' txtboxSearchEmployee
         ' 
-        txtboxSearchEmployee.Location = New Point(212, 292)
+        txtboxSearchEmployee.Location = New Point(212, 301)
+        txtboxSearchEmployee.Margin = New Padding(2)
         txtboxSearchEmployee.Name = "txtboxSearchEmployee"
-        txtboxSearchEmployee.Size = New Size(175, 35)
+        txtboxSearchEmployee.Size = New Size(174, 35)
         txtboxSearchEmployee.TabIndex = 20
         ' 
         ' checkboxEmployee
         ' 
         checkboxEmployee.AutoSize = True
-        checkboxEmployee.Location = New Point(393, 304)
+        checkboxEmployee.Location = New Point(394, 313)
+        checkboxEmployee.Margin = New Padding(2)
         checkboxEmployee.Name = "checkboxEmployee"
         checkboxEmployee.Size = New Size(22, 21)
         checkboxEmployee.TabIndex = 21
@@ -240,7 +263,8 @@ Partial Class RegisterForm
         ' lbl
         ' 
         lbl.AutoSize = True
-        lbl.Location = New Point(502, 292)
+        lbl.Location = New Point(502, 301)
+        lbl.Margin = New Padding(2, 0, 2, 0)
         lbl.Name = "lbl"
         lbl.Size = New Size(283, 30)
         lbl.TabIndex = 22
@@ -249,7 +273,8 @@ Partial Class RegisterForm
         ' checkboxEmpPos
         ' 
         checkboxEmpPos.AutoSize = True
-        checkboxEmpPos.Location = New Point(972, 301)
+        checkboxEmpPos.Location = New Point(972, 311)
+        checkboxEmpPos.Margin = New Padding(2)
         checkboxEmpPos.Name = "checkboxEmpPos"
         checkboxEmpPos.Size = New Size(22, 21)
         checkboxEmpPos.TabIndex = 24
@@ -257,16 +282,85 @@ Partial Class RegisterForm
         ' 
         ' txtboxEmpPos
         ' 
-        txtboxEmpPos.Location = New Point(791, 292)
+        txtboxEmpPos.Location = New Point(791, 301)
+        txtboxEmpPos.Margin = New Padding(2)
         txtboxEmpPos.Name = "txtboxEmpPos"
-        txtboxEmpPos.Size = New Size(175, 35)
+        txtboxEmpPos.Size = New Size(174, 35)
         txtboxEmpPos.TabIndex = 23
+        ' 
+        ' BtnPayRoll
+        ' 
+        BtnPayRoll.Location = New Point(950, 742)
+        BtnPayRoll.Margin = New Padding(4, 4, 4, 4)
+        BtnPayRoll.Name = "BtnPayRoll"
+        BtnPayRoll.Size = New Size(223, 68)
+        BtnPayRoll.TabIndex = 25
+        BtnPayRoll.Text = "Calculate  Payroll"
+        BtnPayRoll.UseVisualStyleBackColor = True
+        ' 
+        ' chBoxSSS
+        ' 
+        chBoxSSS.AutoSize = True
+        chBoxSSS.Location = New Point(1056, 160)
+        chBoxSSS.Margin = New Padding(4, 4, 4, 4)
+        chBoxSSS.Name = "chBoxSSS"
+        chBoxSSS.Size = New Size(72, 34)
+        chBoxSSS.TabIndex = 26
+        chBoxSSS.Text = "SSS"
+        chBoxSSS.UseVisualStyleBackColor = True
+        ' 
+        ' chBoxPhilHealth
+        ' 
+        chBoxPhilHealth.AutoSize = True
+        chBoxPhilHealth.Location = New Point(1056, 220)
+        chBoxPhilHealth.Margin = New Padding(4, 4, 4, 4)
+        chBoxPhilHealth.Name = "chBoxPhilHealth"
+        chBoxPhilHealth.Size = New Size(134, 34)
+        chBoxPhilHealth.TabIndex = 27
+        chBoxPhilHealth.Text = "PhilHealth"
+        chBoxPhilHealth.UseVisualStyleBackColor = True
+        ' 
+        ' chBoxPagibig
+        ' 
+        chBoxPagibig.AutoSize = True
+        chBoxPagibig.Location = New Point(1056, 286)
+        chBoxPagibig.Margin = New Padding(4, 4, 4, 4)
+        chBoxPagibig.Name = "chBoxPagibig"
+        chBoxPagibig.Size = New Size(122, 34)
+        chBoxPagibig.TabIndex = 28
+        chBoxPagibig.Text = "PAG IBIG"
+        chBoxPagibig.UseVisualStyleBackColor = True
+        ' 
+        ' Label7
+        ' 
+        Label7.AutoSize = True
+        Label7.Location = New Point(1021, 109)
+        Label7.Margin = New Padding(4, 0, 4, 0)
+        Label7.Name = "Label7"
+        Label7.Size = New Size(222, 30)
+        Label7.TabIndex = 29
+        Label7.Text = "Government Agencies:"
+        ' 
+        ' Button1
+        ' 
+        Button1.Location = New Point(1128, 880)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(131, 40)
+        Button1.TabIndex = 30
+        Button1.Text = "Button1"
+        Button1.UseVisualStyleBackColor = True
         ' 
         ' RegisterForm
         ' 
         AutoScaleDimensions = New SizeF(12F, 30F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1047, 879)
+        ClientSize = New Size(1271, 932)
+        Controls.Add(Button1)
+        Controls.Add(Label7)
+        Controls.Add(chBoxPagibig)
+        Controls.Add(chBoxPhilHealth)
+        Controls.Add(chBoxSSS)
+        Controls.Add(BtnPayRoll)
         Controls.Add(checkboxEmpPos)
         Controls.Add(txtboxEmpPos)
         Controls.Add(lbl)
@@ -287,6 +381,7 @@ Partial Class RegisterForm
         Controls.Add(Label3)
         Controls.Add(Label2)
         Controls.Add(Label1)
+        Margin = New Padding(2)
         Name = "RegisterForm"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Register Employee"
@@ -321,4 +416,10 @@ Partial Class RegisterForm
     Friend WithEvents lbl As Label
     Friend WithEvents checkboxEmpPos As CheckBox
     Friend WithEvents txtboxEmpPos As TextBox
+    Friend WithEvents BtnPayRoll As Button
+    Friend WithEvents chBoxSSS As CheckBox
+    Friend WithEvents chBoxPhilHealth As CheckBox
+    Friend WithEvents chBoxPagibig As CheckBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Button1 As Button
 End Class
