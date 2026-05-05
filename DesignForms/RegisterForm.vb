@@ -24,6 +24,9 @@
         txtboxAttendance.Text = ""
         txtboxSearchEmployee.Text = ""
         checkboxEmployee.Checked = False
+        chBoxPagibig.Checked = False
+        chBoxPhilHealth.Checked = False
+        chBoxSSS.Checked = False
     End Sub
 
     Private Sub btnDone_Click(sender As Object, e As EventArgs) Handles btnDone.Click
