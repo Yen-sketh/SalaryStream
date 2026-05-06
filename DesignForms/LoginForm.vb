@@ -29,11 +29,9 @@
 
     End Sub
 
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
-        'test'
-    End Sub
 
-    Private Sub btnRegister_Click(sender As Object, e As EventArgs)
-
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        TextBox1.Text = ""
+        TextBox2.Text = ""
     End Sub
 End Class
