@@ -54,7 +54,7 @@ Partial Class RegisterForm
         chBoxPhilHealth = New CheckBox()
         chBoxPagibig = New CheckBox()
         Label7 = New Label()
-        Button1 = New Button()
+        btnLogOut = New Button()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -290,8 +290,8 @@ Partial Class RegisterForm
         ' 
         ' BtnPayRoll
         ' 
-        BtnPayRoll.Location = New Point(950, 742)
-        BtnPayRoll.Margin = New Padding(4, 4, 4, 4)
+        BtnPayRoll.Location = New Point(955, 722)
+        BtnPayRoll.Margin = New Padding(4)
         BtnPayRoll.Name = "BtnPayRoll"
         BtnPayRoll.Size = New Size(223, 68)
         BtnPayRoll.TabIndex = 25
@@ -302,7 +302,7 @@ Partial Class RegisterForm
         ' 
         chBoxSSS.AutoSize = True
         chBoxSSS.Location = New Point(1056, 160)
-        chBoxSSS.Margin = New Padding(4, 4, 4, 4)
+        chBoxSSS.Margin = New Padding(4)
         chBoxSSS.Name = "chBoxSSS"
         chBoxSSS.Size = New Size(72, 34)
         chBoxSSS.TabIndex = 26
@@ -313,7 +313,7 @@ Partial Class RegisterForm
         ' 
         chBoxPhilHealth.AutoSize = True
         chBoxPhilHealth.Location = New Point(1056, 220)
-        chBoxPhilHealth.Margin = New Padding(4, 4, 4, 4)
+        chBoxPhilHealth.Margin = New Padding(4)
         chBoxPhilHealth.Name = "chBoxPhilHealth"
         chBoxPhilHealth.Size = New Size(134, 34)
         chBoxPhilHealth.TabIndex = 27
@@ -324,7 +324,7 @@ Partial Class RegisterForm
         ' 
         chBoxPagibig.AutoSize = True
         chBoxPagibig.Location = New Point(1056, 286)
-        chBoxPagibig.Margin = New Padding(4, 4, 4, 4)
+        chBoxPagibig.Margin = New Padding(4)
         chBoxPagibig.Name = "chBoxPagibig"
         chBoxPagibig.Size = New Size(122, 34)
         chBoxPagibig.TabIndex = 28
@@ -341,21 +341,21 @@ Partial Class RegisterForm
         Label7.TabIndex = 29
         Label7.Text = "Government Agencies:"
         ' 
-        ' Button1
+        ' btnLogOut
         ' 
-        Button1.Location = New Point(1128, 880)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(131, 40)
-        Button1.TabIndex = 30
-        Button1.Text = "Button1"
-        Button1.UseVisualStyleBackColor = True
+        btnLogOut.Location = New Point(36, 736)
+        btnLogOut.Name = "btnLogOut"
+        btnLogOut.Size = New Size(131, 40)
+        btnLogOut.TabIndex = 30
+        btnLogOut.Text = "Logout"
+        btnLogOut.UseVisualStyleBackColor = True
         ' 
         ' RegisterForm
         ' 
         AutoScaleDimensions = New SizeF(12F, 30F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1271, 932)
-        Controls.Add(Button1)
+        Controls.Add(btnLogOut)
         Controls.Add(Label7)
         Controls.Add(chBoxPagibig)
         Controls.Add(chBoxPhilHealth)
@@ -421,5 +421,5 @@ Partial Class RegisterForm
     Friend WithEvents chBoxPhilHealth As CheckBox
     Friend WithEvents chBoxPagibig As CheckBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnLogOut As Button
 End Class
