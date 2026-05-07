@@ -105,7 +105,7 @@
     Private Sub BtnPayRoll_Click(sender As Object, e As EventArgs) Handles BtnPayRoll.Click
 
         PayrollForm.Show()
-        'Me.Hide()
+        Me.Hide()
     End Sub
 
     Private Sub btnLogOut_Click(sender As Object, e As EventArgs) Handles btnLogOut.Click
