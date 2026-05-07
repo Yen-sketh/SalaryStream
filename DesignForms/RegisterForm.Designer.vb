@@ -301,7 +301,7 @@ Partial Class RegisterForm
         ' chBoxSSS
         ' 
         chBoxSSS.AutoSize = True
-        chBoxSSS.Location = New Point(1056, 160)
+        chBoxSSS.Location = New Point(988, 132)
         chBoxSSS.Margin = New Padding(4)
         chBoxSSS.Name = "chBoxSSS"
         chBoxSSS.Size = New Size(72, 34)
@@ -312,7 +312,7 @@ Partial Class RegisterForm
         ' chBoxPhilHealth
         ' 
         chBoxPhilHealth.AutoSize = True
-        chBoxPhilHealth.Location = New Point(1056, 220)
+        chBoxPhilHealth.Location = New Point(988, 174)
         chBoxPhilHealth.Margin = New Padding(4)
         chBoxPhilHealth.Name = "chBoxPhilHealth"
         chBoxPhilHealth.Size = New Size(134, 34)
@@ -323,7 +323,7 @@ Partial Class RegisterForm
         ' chBoxPagibig
         ' 
         chBoxPagibig.AutoSize = True
-        chBoxPagibig.Location = New Point(1056, 286)
+        chBoxPagibig.Location = New Point(988, 216)
         chBoxPagibig.Margin = New Padding(4)
         chBoxPagibig.Name = "chBoxPagibig"
         chBoxPagibig.Size = New Size(122, 34)
@@ -334,7 +334,7 @@ Partial Class RegisterForm
         ' Label7
         ' 
         Label7.AutoSize = True
-        Label7.Location = New Point(1021, 109)
+        Label7.Location = New Point(972, 98)
         Label7.Margin = New Padding(4, 0, 4, 0)
         Label7.Name = "Label7"
         Label7.Size = New Size(222, 30)
@@ -352,6 +352,7 @@ Partial Class RegisterForm
         ' 
         ' RegisterForm
         ' 
+        AcceptButton = btnDone
         AutoScaleDimensions = New SizeF(12F, 30F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1271, 932)
