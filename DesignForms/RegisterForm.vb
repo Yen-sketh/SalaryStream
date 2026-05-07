@@ -11,10 +11,7 @@
     Public Shared overtimeArray(99) As Double
 
     Public Shared count As Integer = 0
-    Public Sub RegisterForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-
-    End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         txtboxDailyRate.Text = ""
@@ -106,8 +103,14 @@
     End Sub
 
     Private Sub BtnPayRoll_Click(sender As Object, e As EventArgs) Handles BtnPayRoll.Click
+
         PayrollForm.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub btnLogOut_Click(sender As Object, e As EventArgs) Handles btnLogOut.Click
+        Me.Hide()
+        LoginForm.Show()
     End Sub
 
 
