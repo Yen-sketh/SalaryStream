@@ -36,7 +36,7 @@ Partial Class PayrollForm
         ' 
         ComboBox1.FormattingEnabled = True
         ComboBox1.Location = New Point(370, 132)
-        ComboBox1.Margin = New Padding(4, 4, 4, 4)
+        ComboBox1.Margin = New Padding(4)
         ComboBox1.Name = "ComboBox1"
         ComboBox1.Size = New Size(354, 38)
         ComboBox1.TabIndex = 0
@@ -46,7 +46,7 @@ Partial Class PayrollForm
         DataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView2.Columns.AddRange(New DataGridViewColumn() {CalculationCategories})
         DataGridView2.Location = New Point(52, 206)
-        DataGridView2.Margin = New Padding(4, 4, 4, 4)
+        DataGridView2.Margin = New Padding(4)
         DataGridView2.Name = "DataGridView2"
         DataGridView2.RowHeadersWidth = 62
         DataGridView2.Size = New Size(728, 504)
@@ -62,7 +62,7 @@ Partial Class PayrollForm
         ' BtnCalculate
         ' 
         BtnCalculate.Location = New Point(646, 737)
-        BtnCalculate.Margin = New Padding(4, 4, 4, 4)
+        BtnCalculate.Margin = New Padding(4)
         BtnCalculate.Name = "BtnCalculate"
         BtnCalculate.Size = New Size(134, 41)
         BtnCalculate.TabIndex = 2
@@ -93,7 +93,7 @@ Partial Class PayrollForm
         ' BtnBackRegister
         ' 
         BtnBackRegister.Location = New Point(52, 737)
-        BtnBackRegister.Margin = New Padding(4, 4, 4, 4)
+        BtnBackRegister.Margin = New Padding(4)
         BtnBackRegister.Name = "BtnBackRegister"
         BtnBackRegister.Size = New Size(186, 41)
         BtnBackRegister.TabIndex = 12
@@ -111,7 +111,7 @@ Partial Class PayrollForm
         Controls.Add(BtnCalculate)
         Controls.Add(DataGridView2)
         Controls.Add(ComboBox1)
-        Margin = New Padding(4, 4, 4, 4)
+        Margin = New Padding(4)
         Name = "PayrollForm"
         Text = "Payroll "
         CType(DataGridView2, ComponentModel.ISupportInitialize).EndInit()
