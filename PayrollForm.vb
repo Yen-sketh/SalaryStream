@@ -1,4 +1,9 @@
-﻿Public Class PayrollForm
+﻿
+Imports System.Globalization
+
+Public Class PayrollForm
+
+    Dim philCulture As New CultureInfo("fil-PH")
 
     Private Sub PayrollForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SetupGridRows()
@@ -95,14 +100,14 @@
 
         Dim netPay As Double = grossPay - deductions
 
-        DataGridView2.Rows(0).Cells(1).Value = dailyRate.ToString("C0")
+        DataGridView2.Rows(0).Cells(1).Value = dailyRate.ToString("C0", philCulture)
         DataGridView2.Rows(1).Cells(1).Value = daysWorked.ToString()
-        DataGridView2.Rows(2).Cells(1).Value = overTimeRate.ToString("C0")
+        DataGridView2.Rows(2).Cells(1).Value = overTimeRate.ToString("C0", philCulture)
         DataGridView2.Rows(3).Cells(1).Value = overTime.ToString()
-        DataGridView2.Rows(4).Cells(1).Value = overTimePay.ToString("C0")
-        DataGridView2.Rows(5).Cells(1).Value = grossPay.ToString("C0")
-        DataGridView2.Rows(9).Cells(1).Value = deductions.ToString("C0")
-        DataGridView2.Rows(10).Cells(1).Value = netPay.ToString("C0")
+        DataGridView2.Rows(4).Cells(1).Value = overTimePay.ToString("C0", philCulture)
+        DataGridView2.Rows(5).Cells(1).Value = grossPay.ToString("C0", philCulture)
+        DataGridView2.Rows(9).Cells(1).Value = deductions.ToString("C0", philCulture)
+        DataGridView2.Rows(10).Cells(1).Value = netPay.ToString("C0", philCulture)
 
     End Sub
 
