@@ -51,6 +51,7 @@ Partial Class RegisterForm
         cBoxPosition = New ComboBox()
         btnUpdate = New Button()
         btnMainList = New Button()
+        btnDelete = New Button()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -167,13 +168,13 @@ Partial Class RegisterForm
         ' DataGridView1
         ' 
         DataGridView1.AllowUserToAddRows = False
-        DataGridView1.AllowUserToDeleteRows = False
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column1, Column2, Column3, Column4, Column5})
         DataGridView1.Location = New Point(25, 362)
         DataGridView1.Margin = New Padding(2)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 72
+        DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         DataGridView1.Size = New Size(1444, 350)
         DataGridView1.TabIndex = 14
         ' 
@@ -219,7 +220,7 @@ Partial Class RegisterForm
         btnDone.Name = "btnDone"
         btnDone.Size = New Size(448, 40)
         btnDone.TabIndex = 17
-        btnDone.Text = "Done"
+        btnDone.Text = "Add Employee"
         btnDone.UseVisualStyleBackColor = True
         ' 
         ' btnClear
@@ -308,12 +309,22 @@ Partial Class RegisterForm
         btnMainList.Text = "Main List"
         btnMainList.UseVisualStyleBackColor = True
         ' 
+        ' btnDelete
+        ' 
+        btnDelete.Location = New Point(460, 792)
+        btnDelete.Name = "btnDelete"
+        btnDelete.Size = New Size(573, 68)
+        btnDelete.TabIndex = 35
+        btnDelete.Text = "DELETE"
+        btnDelete.UseVisualStyleBackColor = True
+        ' 
         ' RegisterForm
         ' 
         AcceptButton = btnDone
         AutoScaleDimensions = New SizeF(12F, 30F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1480, 973)
+        ClientSize = New Size(1532, 999)
+        Controls.Add(btnDelete)
         Controls.Add(btnMainList)
         Controls.Add(btnUpdate)
         Controls.Add(cBoxPosition)
@@ -373,4 +384,5 @@ Partial Class RegisterForm
     Friend WithEvents cBoxPosition As ComboBox
     Friend WithEvents btnUpdate As Button
     Friend WithEvents btnMainList As Button
+    Friend WithEvents btnDelete As Button
 End Class

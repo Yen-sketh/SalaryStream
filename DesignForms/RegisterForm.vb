@@ -115,6 +115,13 @@
 
     End Sub
 
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        Dim index = DataGridView1.SelectedRows(0).Index
+        DataGridView1.Rows.RemoveAt(index)
+        adjustArray(index)
+        update_list()
+    End Sub
+
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         update_list()
     End Sub
@@ -143,12 +150,68 @@
         Next
     End Sub
 
+    Sub update_after_delete()
+
+        'update combobox list
+        cBoxEmployee.Items.Clear()
+        For i As Integer = 0 To DataGridView1.Rows.Count - 1
+            Dim afterDelCellValue = DataGridView1.Rows(i).Cells(0).Value
+
+            If Not cBoxEmployee.Items.Contains(afterDelCellValue) Then
+                cBoxEmployee.Items.Add(afterDelCellValue)
+            End If
+        Next
+
+        'update position combobox
+        cBoxPosition.Items.Clear()
+        For i As Integer = 0 To DataGridView1.Rows.Count - 1
+            Dim afterDelCellValuePos = DataGridView1.Rows(i).Cells(0).Value
+
+            If Not cBoxPosition.Items.Contains(afterDelCellValuePos) Then
+                cBoxPosition.Items.Add(afterDelCellValuePos)
+            End If
+        Next
+
+    End Sub
+
+    Sub adjustArray(index As Integer)
+        ' THIS IS JUST AN EXPLANATION ON HOW adjustArray WORKS
+        ' numArray = (1,2,3,4,5) (5 count)
+        ' 2 is the sample index, to be deleted is the 3rd element. to count(5) - 2 = 3
+        ' numArray(2) = numArray(2+1 = 3): looks like ---> 3 = 4 
+        ' so at index 2 of numArray, it will be 4.
+        '
+        For i As Integer = index To count - 2
+            nameArray(i) = nameArray(i + 1)
+            positionArray(i) = positionArray(i + 1)
+            dailyRateArray(i) = dailyRateArray(i + 1)
+            overtimeArray(i) = overtimeArray(i + 1)
+            attendaceArray(i) = attendaceArray(i + 1)
+        Next
+
+        'Defaults the upper bound value of the array as the following:
+        nameArray(count - 1) = ""
+        positionArray(count - 1) = ""
+        dailyRateArray(count - 1) = 0
+        overtimeArray(count - 1) = 0
+        attendaceArray(count - 1) = 0
+
+        'Decreases count of Array so that the next delete will not make an indexing error.
+        count -= 1
+    End Sub
+
 
 
     Private Sub DataGridView1_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellValueChanged
+        'DataGrid automatically adds a new row per entry, causing an index error.
+        'This is remedized by adding this two safety checks + turning the AllowUserToAddRow--
+        'property of DataGrid to false.
+
         If e.RowIndex < 0 Then Exit Sub
         If DataGridView1.Rows(e.RowIndex).Cells(e.ColumnIndex).Value Is Nothing Then Exit Sub
 
+
+        ' Gets Emp_name index
         If e.ColumnIndex = 0 Then
 
             cBoxEmployee.Items.Clear()
@@ -192,6 +255,7 @@
             attendaceArray(e.RowIndex) = DataGridView1.Rows(e.RowIndex).Cells(3).Value
         End If
 
+        'overtime
         If e.ColumnIndex = 4 Then
             'updates 
             overtimeArray(e.RowIndex) = DataGridView1.Rows(e.RowIndex).Cells(4).Value
@@ -199,4 +263,8 @@
 
     End Sub
 
+    Private Sub DataGridView1_UserDeletedRow(sender As Object, e As DataGridViewRowEventArgs) Handles DataGridView1.UserDeletedRow
+        adjustArray(DataGridView1.SelectedRows(0).Index)
+        update_after_delete()
+    End Sub
 End Class
