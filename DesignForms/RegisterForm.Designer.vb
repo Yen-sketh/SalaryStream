@@ -49,6 +49,7 @@ Partial Class RegisterForm
         btnLogOut = New Button()
         cBoxEmployee = New ComboBox()
         cBoxPosition = New ComboBox()
+        btnRefresh = New Button()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -282,12 +283,22 @@ Partial Class RegisterForm
         cBoxPosition.Size = New Size(212, 38)
         cBoxPosition.TabIndex = 32
         ' 
+        ' btnRefresh
+        ' 
+        btnRefresh.Location = New Point(808, 823)
+        btnRefresh.Name = "btnRefresh"
+        btnRefresh.Size = New Size(230, 40)
+        btnRefresh.TabIndex = 33
+        btnRefresh.Text = "Refresh"
+        btnRefresh.UseVisualStyleBackColor = True
+        ' 
         ' RegisterForm
         ' 
         AcceptButton = btnDone
         AutoScaleDimensions = New SizeF(12F, 30F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1050, 913)
+        Controls.Add(btnRefresh)
         Controls.Add(cBoxPosition)
         Controls.Add(cBoxEmployee)
         Controls.Add(btnLogOut)
@@ -343,4 +354,5 @@ Partial Class RegisterForm
     Friend WithEvents btnLogOut As Button
     Friend WithEvents cBoxEmployee As ComboBox
     Friend WithEvents cBoxPosition As ComboBox
+    Friend WithEvents btnRefresh As Button
 End Class

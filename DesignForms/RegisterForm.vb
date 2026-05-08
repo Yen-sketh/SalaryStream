@@ -47,9 +47,8 @@
 
         If Not cBoxEmployee.items.Contains(nameArray(count)) Then
             cBoxEmployee.Items.Add(nameArray(count))
-            cBoxPosition.Items.Add(positionArray(count))
-        End If
 
+        End If
 
         If Not cBoxPosition.Items.Contains(positionArray(count)) Then
             cBoxPosition.Items.Add(positionArray(count))
@@ -70,9 +69,24 @@
     End Sub
 
     Private Sub cBoxEmployee_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cBoxEmployee.SelectedIndexChanged
-        search_employee()
-        search_employeePos()
+
+        If cBoxEmployee.SelectedIndex = -1 Then
+            show_original_list()
+        Else
+            search_employee()
+        End If
     End Sub
+
+    Private Sub cBoxPosition_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cBoxPosition.SelectedIndexChanged
+
+        If cBoxPosition.SelectedIndex = -1 Then
+            show_original_list()
+        Else
+            search_employeePos()
+        End If
+    End Sub
+
+
     Sub search_employee()
 
         For i As Integer = 0 To DataGridView1.RowCount - 1
@@ -90,7 +104,7 @@
 
         For i As Integer = 0 To DataGridView1.RowCount - 1
             Dim pos_employee = DataGridView1.Rows(i).Cells(1).Value
-            If cBoxEmployee.Text = pos_employee Then
+            If cBoxPosition.Text = pos_employee Then
                 DataGridView1.Rows(i).Visible = True
             Else
                 DataGridView1.Rows(i).Visible = False
@@ -98,5 +112,23 @@
         Next
 
     End Sub
+
+    Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
+        refresh_list()
+    End Sub
+
+    Sub refresh_list()
+        cBoxEmployee.SelectedIndex = -1
+        cBoxPosition.SelectedIndex = -1
+        show_original_list()
+
+    End Sub
+
+    Sub show_original_list()
+        For i As Integer = 0 To DataGridView1.Rows.Count - 1
+            DataGridView1.Rows(i).Visible = True
+        Next
+    End Sub
+
 
 End Class
