@@ -103,8 +103,9 @@ Partial Class PayrollForm
         ' PayrollForm
         ' 
         AcceptButton = BtnCalculate
-        AutoScaleDimensions = New SizeF(12F, 30F)
-        AutoScaleMode = AutoScaleMode.Font
+        AutoScaleDimensions = New SizeF(168F, 168F)
+        AutoScaleMode = AutoScaleMode.Dpi
+        AutoSize = True
         ClientSize = New Size(821, 805)
         Controls.Add(BtnBackRegister)
         Controls.Add(Label5)
