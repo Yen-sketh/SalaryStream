@@ -328,7 +328,7 @@ Partial Class RegisterForm
         AutoScaleMode = AutoScaleMode.Dpi
         AutoSize = True
         BackColor = Color.FromArgb(CByte(237), CByte(233), CByte(230))
-        ClientSize = New Size(1532, 839)
+        ClientSize = New Size(1532, 1028)
         Controls.Add(btnDelete)
         Controls.Add(btnMainList)
         Controls.Add(btnUpdate)
