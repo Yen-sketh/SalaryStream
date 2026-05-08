@@ -45,12 +45,17 @@
                                    attendaceArray(count), overtimeArray(count))
 
 
-        cBoxEmployee.Items.Add(nameArray(count))
-        cBoxPosition.Items.Add(positionArray(count))
+        If Not cBoxEmployee.items.Contains(nameArray(count)) Then
+            cBoxEmployee.Items.Add(nameArray(count))
+            cBoxPosition.Items.Add(positionArray(count))
+        End If
+
+
+        If Not cBoxPosition.Items.Contains(positionArray(count)) Then
+            cBoxPosition.Items.Add(positionArray(count))
+        End If
 
     End Sub
-
-
 
 
     Private Sub BtnPayRoll_Click(sender As Object, e As EventArgs) Handles BtnPayRoll.Click
@@ -64,5 +69,34 @@
         LoginForm.Close()
     End Sub
 
+    Private Sub cBoxEmployee_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cBoxEmployee.SelectedIndexChanged
+        search_employee()
+        search_employeePos()
+    End Sub
+    Sub search_employee()
+
+        For i As Integer = 0 To DataGridView1.RowCount - 1
+            Dim name_employee = DataGridView1.Rows(i).Cells(0).Value
+            If cBoxEmployee.Text = name_employee Then
+                DataGridView1.Rows(i).Visible = True
+            Else
+                DataGridView1.Rows(i).Visible = False
+            End If
+        Next
+
+    End Sub
+
+    Sub search_employeePos()
+
+        For i As Integer = 0 To DataGridView1.RowCount - 1
+            Dim pos_employee = DataGridView1.Rows(i).Cells(1).Value
+            If cBoxEmployee.Text = pos_employee Then
+                DataGridView1.Rows(i).Visible = True
+            Else
+                DataGridView1.Rows(i).Visible = False
+            End If
+        Next
+
+    End Sub
 
 End Class
