@@ -16,7 +16,7 @@
             MessageBox.Show("Login Successful!", "Payroll System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             'mag oopen sya ng bagong form after mag log in
-            Dim main As New RegisterForm
+
 
             main.Show()
             Me.Hide()
@@ -30,4 +30,11 @@
         End If
     End Sub
 
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+        'test'
+    End Sub
 End Class
