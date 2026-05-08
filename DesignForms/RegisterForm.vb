@@ -123,6 +123,28 @@
         main_list()
     End Sub
 
+
+    Sub update_list()
+        cBoxEmployee.SelectedIndex = -1
+        cBoxPosition.SelectedIndex = -1
+
+    End Sub
+
+    Sub main_list()
+        cBoxEmployee.SelectedIndex = -1
+        cBoxPosition.SelectedIndex = -1
+        show_original_list()
+
+    End Sub
+
+    Sub show_original_list()
+        For i As Integer = 0 To DataGridView1.Rows.Count - 1
+            DataGridView1.Rows(i).Visible = True
+        Next
+    End Sub
+
+
+
     Private Sub DataGridView1_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellValueChanged
         If e.RowIndex < 0 Then Exit Sub
         If DataGridView1.Rows(e.RowIndex).Cells(e.ColumnIndex).Value Is Nothing Then Exit Sub
@@ -177,24 +199,4 @@
 
     End Sub
 
-
-
-    Sub update_list()
-        cBoxEmployee.SelectedIndex = -1
-        cBoxPosition.SelectedIndex = -1
-
-    End Sub
-
-    Sub main_list()
-        cBoxEmployee.SelectedIndex = -1
-        cBoxPosition.SelectedIndex = -1
-        show_original_list()
-
-    End Sub
-
-    Sub show_original_list()
-        For i As Integer = 0 To DataGridView1.Rows.Count - 1
-            DataGridView1.Rows(i).Visible = True
-        Next
-    End Sub
 End Class
