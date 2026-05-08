@@ -49,7 +49,8 @@ Partial Class RegisterForm
         btnLogOut = New Button()
         cBoxEmployee = New ComboBox()
         cBoxPosition = New ComboBox()
-        btnRefresh = New Button()
+        btnUpdate = New Button()
+        btnMainList = New Button()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -114,6 +115,7 @@ Partial Class RegisterForm
         txtboxAttendance.Location = New Point(473, 178)
         txtboxAttendance.Margin = New Padding(2)
         txtboxAttendance.Name = "txtboxAttendance"
+        txtboxAttendance.PlaceholderText = "0"
         txtboxAttendance.Size = New Size(174, 35)
         txtboxAttendance.TabIndex = 6
         ' 
@@ -122,21 +124,23 @@ Partial Class RegisterForm
         txtboxDailyRate.Location = New Point(473, 98)
         txtboxDailyRate.Margin = New Padding(2)
         txtboxDailyRate.Name = "txtboxDailyRate"
+        txtboxDailyRate.PlaceholderText = "0"
         txtboxDailyRate.Size = New Size(174, 35)
         txtboxDailyRate.TabIndex = 7
         ' 
         ' txtboxOvertime
         ' 
-        txtboxOvertime.Location = New Point(773, 102)
+        txtboxOvertime.Location = New Point(778, 103)
         txtboxOvertime.Margin = New Padding(2)
         txtboxOvertime.Name = "txtboxOvertime"
+        txtboxOvertime.PlaceholderText = "0"
         txtboxOvertime.Size = New Size(150, 35)
         txtboxOvertime.TabIndex = 9
         ' 
         ' z
         ' 
         z.AutoSize = True
-        z.Location = New Point(664, 102)
+        z.Location = New Point(662, 103)
         z.Margin = New Padding(2, 0, 2, 0)
         z.Name = "z"
         z.Size = New Size(103, 30)
@@ -147,7 +151,7 @@ Partial Class RegisterForm
         ' 
         Label5.AutoSize = True
         Label5.Font = New Font("Segoe UI", 20F)
-        Label5.Location = New Point(394, 11)
+        Label5.Location = New Point(621, 9)
         Label5.Margin = New Padding(2, 0, 2, 0)
         Label5.Name = "Label5"
         Label5.Size = New Size(307, 62)
@@ -163,13 +167,14 @@ Partial Class RegisterForm
         ' DataGridView1
         ' 
         DataGridView1.AllowUserToAddRows = False
+        DataGridView1.AllowUserToDeleteRows = False
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column1, Column2, Column3, Column4, Column5})
-        DataGridView1.Location = New Point(8, 366)
+        DataGridView1.Location = New Point(25, 362)
         DataGridView1.Margin = New Padding(2)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 72
-        DataGridView1.Size = New Size(1022, 350)
+        DataGridView1.Size = New Size(1444, 350)
         DataGridView1.TabIndex = 14
         ' 
         ' Column1
@@ -209,7 +214,7 @@ Partial Class RegisterForm
         ' 
         ' btnDone
         ' 
-        btnDone.Location = New Point(25, 246)
+        btnDone.Location = New Point(25, 318)
         btnDone.Margin = New Padding(2)
         btnDone.Name = "btnDone"
         btnDone.Size = New Size(448, 40)
@@ -219,10 +224,10 @@ Partial Class RegisterForm
         ' 
         ' btnClear
         ' 
-        btnClear.Location = New Point(502, 246)
+        btnClear.Location = New Point(477, 318)
         btnClear.Margin = New Padding(2)
         btnClear.Name = "btnClear"
-        btnClear.Size = New Size(468, 40)
+        btnClear.Size = New Size(494, 40)
         btnClear.TabIndex = 18
         btnClear.Text = "Clear"
         btnClear.UseVisualStyleBackColor = True
@@ -230,39 +235,41 @@ Partial Class RegisterForm
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(25, 305)
+        Label6.Font = New Font("Segoe UI", 15F)
+        Label6.Location = New Point(25, 242)
         Label6.Margin = New Padding(2, 0, 2, 0)
         Label6.Name = "Label6"
-        Label6.Size = New Size(176, 30)
+        Label6.Size = New Size(292, 47)
         Label6.TabIndex = 19
         Label6.Text = "Search Employee:"
         ' 
         ' lbl
         ' 
         lbl.AutoSize = True
-        lbl.Location = New Point(502, 301)
+        lbl.Font = New Font("Segoe UI", 15F)
+        lbl.Location = New Point(632, 242)
         lbl.Margin = New Padding(2, 0, 2, 0)
         lbl.Name = "lbl"
-        lbl.Size = New Size(283, 30)
+        lbl.Size = New Size(474, 47)
         lbl.TabIndex = 22
         lbl.Text = "Search by Employee Position:"
         ' 
         ' BtnPayRoll
         ' 
-        BtnPayRoll.Location = New Point(808, 748)
+        BtnPayRoll.Location = New Point(1040, 718)
         BtnPayRoll.Margin = New Padding(4)
         BtnPayRoll.Name = "BtnPayRoll"
-        BtnPayRoll.Size = New Size(223, 68)
+        BtnPayRoll.Size = New Size(429, 68)
         BtnPayRoll.TabIndex = 25
         BtnPayRoll.Text = "Calculate  Payroll"
         BtnPayRoll.UseVisualStyleBackColor = True
         ' 
         ' btnLogOut
         ' 
-        btnLogOut.Location = New Point(25, 762)
+        btnLogOut.Location = New Point(25, 718)
         btnLogOut.Margin = New Padding(2)
         btnLogOut.Name = "btnLogOut"
-        btnLogOut.Size = New Size(131, 40)
+        btnLogOut.Size = New Size(430, 68)
         btnLogOut.TabIndex = 30
         btnLogOut.Text = "Logout"
         btnLogOut.UseVisualStyleBackColor = True
@@ -270,35 +277,45 @@ Partial Class RegisterForm
         ' cBoxEmployee
         ' 
         cBoxEmployee.FormattingEnabled = True
-        cBoxEmployee.Location = New Point(206, 305)
+        cBoxEmployee.Location = New Point(313, 251)
         cBoxEmployee.Name = "cBoxEmployee"
-        cBoxEmployee.Size = New Size(212, 38)
+        cBoxEmployee.Size = New Size(268, 38)
         cBoxEmployee.TabIndex = 31
         ' 
         ' cBoxPosition
         ' 
         cBoxPosition.FormattingEnabled = True
-        cBoxPosition.Location = New Point(790, 298)
+        cBoxPosition.Location = New Point(1111, 253)
         cBoxPosition.Name = "cBoxPosition"
         cBoxPosition.Size = New Size(212, 38)
         cBoxPosition.TabIndex = 32
         ' 
-        ' btnRefresh
+        ' btnUpdate
         ' 
-        btnRefresh.Location = New Point(808, 823)
-        btnRefresh.Name = "btnRefresh"
-        btnRefresh.Size = New Size(230, 40)
-        btnRefresh.TabIndex = 33
-        btnRefresh.Text = "Refresh"
-        btnRefresh.UseVisualStyleBackColor = True
+        btnUpdate.Location = New Point(460, 718)
+        btnUpdate.Name = "btnUpdate"
+        btnUpdate.Size = New Size(573, 68)
+        btnUpdate.TabIndex = 33
+        btnUpdate.Text = "UPDATE"
+        btnUpdate.UseVisualStyleBackColor = True
+        ' 
+        ' btnMainList
+        ' 
+        btnMainList.Location = New Point(976, 318)
+        btnMainList.Name = "btnMainList"
+        btnMainList.Size = New Size(492, 40)
+        btnMainList.TabIndex = 34
+        btnMainList.Text = "Main List"
+        btnMainList.UseVisualStyleBackColor = True
         ' 
         ' RegisterForm
         ' 
         AcceptButton = btnDone
         AutoScaleDimensions = New SizeF(12F, 30F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1050, 913)
-        Controls.Add(btnRefresh)
+        ClientSize = New Size(1480, 973)
+        Controls.Add(btnMainList)
+        Controls.Add(btnUpdate)
         Controls.Add(cBoxPosition)
         Controls.Add(cBoxEmployee)
         Controls.Add(btnLogOut)
@@ -354,5 +371,6 @@ Partial Class RegisterForm
     Friend WithEvents btnLogOut As Button
     Friend WithEvents cBoxEmployee As ComboBox
     Friend WithEvents cBoxPosition As ComboBox
-    Friend WithEvents btnRefresh As Button
+    Friend WithEvents btnUpdate As Button
+    Friend WithEvents btnMainList As Button
 End Class

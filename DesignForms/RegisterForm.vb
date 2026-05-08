@@ -15,11 +15,11 @@
 
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
-        txtboxDailyRate.Text = ""
+        txtboxDailyRate.Text = 0
         txtboxName.Text = ""
         txtboxPosition.Text = ""
-        txtboxOvertime.Text = ""
-        txtboxAttendance.Text = ""
+        txtboxOvertime.Text = 0
+        txtboxAttendance.Text = 0
 
     End Sub
 
@@ -37,9 +37,9 @@
     Sub add_items()
         nameArray(count) = txtboxName.Text.ToUpper
         positionArray(count) = txtboxPosition.Text.ToUpper
-        dailyRateArray(count) = txtboxDailyRate.Text
-        attendaceArray(count) = txtboxAttendance.Text
-        overtimeArray(count) = txtboxOvertime.Text
+        dailyRateArray(count) = Val(txtboxDailyRate.Text)
+        attendaceArray(count) = Val(txtboxAttendance.Text)
+        overtimeArray(count) = Val(txtboxOvertime.Text)
 
         DataGridView1.Rows.Add(nameArray(count), positionArray(count), dailyRateArray(count),
                                    attendaceArray(count), overtimeArray(count))
@@ -70,6 +70,7 @@
 
     Private Sub cBoxEmployee_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cBoxEmployee.SelectedIndexChanged
 
+        'if CBoxEmployee is empty, reset list to original.
         If cBoxEmployee.SelectedIndex = -1 Then
             show_original_list()
         Else
@@ -79,6 +80,7 @@
 
     Private Sub cBoxPosition_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cBoxPosition.SelectedIndexChanged
 
+        'if cBoxPosition is empty, reset list to original.
         If cBoxPosition.SelectedIndex = -1 Then
             show_original_list()
         Else
@@ -113,11 +115,77 @@
 
     End Sub
 
-    Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
-        refresh_list()
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+        update_list()
     End Sub
 
-    Sub refresh_list()
+    Private Sub btnMainList_Click(sender As Object, e As EventArgs) Handles btnMainList.Click
+        main_list()
+    End Sub
+
+    Private Sub DataGridView1_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellValueChanged
+        If e.RowIndex < 0 Then Exit Sub
+        If DataGridView1.Rows(e.RowIndex).Cells(e.ColumnIndex).Value Is Nothing Then Exit Sub
+
+        If e.ColumnIndex = 0 Then
+
+            cBoxEmployee.Items.Clear()
+            For i As Integer = 0 To DataGridView1.Rows.Count - 1
+                Dim newName = DataGridView1.Rows(e.RowIndex).Cells(0).Value.ToString().ToUpper()
+                nameArray(e.RowIndex) = newName
+
+                Dim updatedCellName = DataGridView1.Rows(i).Cells(0).Value
+                If Not cBoxEmployee.Items.Contains(updatedCellName) Then
+                    cBoxEmployee.Items.Add(updatedCellName.ToString())
+                End If
+            Next
+        End If
+
+        ' Gets Emp_position index
+        If e.ColumnIndex = 1 Then
+
+            cBoxPosition.Items.Clear()
+
+            'updates 
+            For i As Integer = 0 To DataGridView1.Rows.Count - 1
+                Dim newPosition = DataGridView1.Rows(e.RowIndex).Cells(1).Value.ToString().ToUpper()
+                positionArray(e.RowIndex) = newPosition
+                Dim updatedCellPosition = DataGridView1.Rows(i).Cells(1).Value
+                If Not cBoxPosition.Items.Contains(updatedCellPosition) Then
+                    cBoxPosition.Items.Add(updatedCellPosition.ToString())
+                End If
+            Next
+
+        End If
+
+        'daily rate
+        If e.ColumnIndex = 2 Then
+            'updates 
+            dailyRateArray(e.RowIndex) = DataGridView1.Rows(e.RowIndex).Cells(2).Value
+        End If
+
+        'Attendance
+        If e.ColumnIndex = 3 Then
+            'updates 
+            attendaceArray(e.RowIndex) = DataGridView1.Rows(e.RowIndex).Cells(3).Value
+        End If
+
+        If e.ColumnIndex = 4 Then
+            'updates 
+            overtimeArray(e.RowIndex) = DataGridView1.Rows(e.RowIndex).Cells(4).Value
+        End If
+
+    End Sub
+
+
+
+    Sub update_list()
+        cBoxEmployee.SelectedIndex = -1
+        cBoxPosition.SelectedIndex = -1
+
+    End Sub
+
+    Sub main_list()
         cBoxEmployee.SelectedIndex = -1
         cBoxPosition.SelectedIndex = -1
         show_original_list()
@@ -129,6 +197,4 @@
             DataGridView1.Rows(i).Visible = True
         Next
     End Sub
-
-
 End Class
