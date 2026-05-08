@@ -34,7 +34,7 @@ Partial Class LoginForm
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(242, 48)
+        Label1.Location = New Point(587, 274)
         Label1.Margin = New Padding(2, 0, 2, 0)
         Label1.Name = "Label1"
         Label1.Size = New Size(0, 30)
@@ -44,7 +44,7 @@ Partial Class LoginForm
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Segoe UI", 20F)
-        Label2.Location = New Point(12, 24)
+        Label2.Location = New Point(357, 250)
         Label2.Margin = New Padding(2, 0, 2, 0)
         Label2.Name = "Label2"
         Label2.Size = New Size(147, 62)
@@ -55,7 +55,7 @@ Partial Class LoginForm
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Segoe UI", 20F)
-        Label3.Location = New Point(12, 100)
+        Label3.Location = New Point(357, 326)
         Label3.Margin = New Padding(2, 0, 2, 0)
         Label3.Name = "Label3"
         Label3.Size = New Size(231, 62)
@@ -64,7 +64,7 @@ Partial Class LoginForm
         ' 
         ' TextBox1
         ' 
-        TextBox1.Location = New Point(166, 44)
+        TextBox1.Location = New Point(511, 270)
         TextBox1.Margin = New Padding(2)
         TextBox1.Name = "TextBox1"
         TextBox1.Size = New Size(174, 35)
@@ -72,7 +72,7 @@ Partial Class LoginForm
         ' 
         ' TextBox2
         ' 
-        TextBox2.Location = New Point(242, 124)
+        TextBox2.Location = New Point(587, 350)
         TextBox2.Margin = New Padding(2)
         TextBox2.Name = "TextBox2"
         TextBox2.Size = New Size(174, 35)
@@ -80,7 +80,7 @@ Partial Class LoginForm
         ' 
         ' btnClear
         ' 
-        btnClear.Location = New Point(34, 203)
+        btnClear.Location = New Point(379, 429)
         btnClear.Margin = New Padding(2)
         btnClear.Name = "btnClear"
         btnClear.Size = New Size(130, 40)
@@ -90,7 +90,7 @@ Partial Class LoginForm
         ' 
         ' btnLogin
         ' 
-        btnLogin.Location = New Point(263, 203)
+        btnLogin.Location = New Point(608, 429)
         btnLogin.Margin = New Padding(2)
         btnLogin.Name = "btnLogin"
         btnLogin.Size = New Size(130, 40)
@@ -103,7 +103,7 @@ Partial Class LoginForm
         AcceptButton = btnLogin
         AutoScaleDimensions = New SizeF(12F, 30F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(478, 266)
+        ClientSize = New Size(1088, 774)
         Controls.Add(btnLogin)
         Controls.Add(btnClear)
         Controls.Add(TextBox2)
