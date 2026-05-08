@@ -103,7 +103,7 @@
 
     Private Sub btnLogOut_Click(sender As Object, e As EventArgs) Handles btnLogOut.Click
         Me.Hide()
-        LoginForm.Show()
+        LoginForm.Close()
     End Sub
 
 
