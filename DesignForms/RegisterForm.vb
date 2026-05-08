@@ -1,14 +1,15 @@
 ﻿Public Class RegisterForm
 
-    Public Shared sssStatus(99) As Boolean
-    Public Shared philHealthStatus(99) As Boolean
-    Public Shared pagibigStatus(99) As Boolean
+    Public Shared sssStatus(99) As Double
+    Public Shared philHealthStatus(99) As Double
+    Public Shared pagibigStatus(99) As Double
 
     Public Shared nameArray(99) As String
     Public Shared positionArray(99) As String
     Public Shared dailyRateArray(99) As Double
     Public Shared attendaceArray(99) As Integer
     Public Shared overtimeArray(99) As Double
+
 
     Public Shared count As Integer = 0
 
@@ -21,9 +22,6 @@
         txtboxAttendance.Text = ""
         txtboxSearchEmployee.Text = ""
         checkboxEmployee.Checked = False
-        chBoxPagibig.Checked = False
-        chBoxPhilHealth.Checked = False
-        chBoxSSS.Checked = False
     End Sub
 
     Private Sub btnDone_Click(sender As Object, e As EventArgs) Handles btnDone.Click
@@ -43,11 +41,6 @@
         dailyRateArray(count) = txtboxDailyRate.Text
         attendaceArray(count) = txtboxAttendance.Text
         overtimeArray(count) = txtboxOvertime.Text
-
-        sssStatus(count) = chBoxSSS.Checked
-        philHealthStatus(count) = chBoxPhilHealth.Checked
-        pagibigStatus(count) = chBoxPagibig.Checked
-
 
         DataGridView1.Rows.Add(nameArray(count), positionArray(count), dailyRateArray(count),
                                    attendaceArray(count), overtimeArray(count))

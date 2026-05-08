@@ -3,6 +3,7 @@ Imports System.Globalization
 
 Public Class PayrollForm
 
+    Public Shared totalDeductionArray(99) As Double
     Dim philCulture As New CultureInfo("fil-PH")
 
     Private Sub PayrollForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -11,12 +12,10 @@ Public Class PayrollForm
 
     Private Sub PayrollForm_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
         If Me.Visible Then
-
             ComboBox1.Items.Clear()
             For i As Integer = 0 To RegisterForm.count - 1
                 ComboBox1.Items.Add(RegisterForm.nameArray(i))
             Next
-
             SetupGridRows()
         End If
     End Sub
@@ -48,57 +47,26 @@ Public Class PayrollForm
             MessageBox.Show("Please Select an Employee")
         End If
 
-
-
         Dim empName As String = RegisterForm.nameArray(i)
         DataGridView2.Columns.Add("column" & empName, empName)
-
 
         'Pay Calculation
         Dim dailyRate As Double = RegisterForm.dailyRateArray(i)
         Dim daysWorked As Integer = RegisterForm.attendaceArray(i)
         Dim overTime As Integer = RegisterForm.overtimeArray(i)
-        Dim overTimeRate As Double = (dailyRate / 8) * 1.25 'Assuming 8 hrs a day yung pasok
+        Dim overTimeRate As Double = (dailyRate / 8) * 1.25
         Dim overTimePay As Double = overTimeRate * overTime
         Dim grossPay As Double = (dailyRate * daysWorked) + overTimePay
-        Dim deductions As Double
-
 
         'Variables for deductions
-        Dim SSSContributionPerDay As Double = 8.55
-        Dim PagibigContributionPerDay As Double = 9.09
-        Dim PhilHealthContributionPerDay As Double = 22.73
-        Dim totalDeduction = 0
+        Dim sssTotal = grossPay * 0.045
+        Dim phTotal = grossPay * 0.02
+        Dim piTotal = grossPay * 0.05
 
-
+        totalDeductionArray(i) = sssTotal + phTotal + piTotal
 
         'Deduction Calculation
-        Dim deductionLabel As String = ""
-        If RegisterForm.sssStatus(i) = True Then
-            Dim sssTotal = SSSContributionPerDay * daysWorked
-            DataGridView2.Rows(6).Cells(1).Value = sssTotal.ToString("C0")
-            deductions += sssTotal
-        Else
-            DataGridView2.Rows(6).Cells(1).Value = "Not Registered"
-        End If
-
-        If RegisterForm.philHealthStatus(i) = True Then
-            Dim phTotal = PhilHealthContributionPerDay * daysWorked
-            DataGridView2.Rows(7).Cells(1).Value = phTotal.ToString("C0")
-            deductions += phTotal
-        Else
-            DataGridView2.Rows(7).Cells(1).Value = "Not Registered"
-        End If
-
-        If RegisterForm.pagibigStatus(i) = True Then
-            Dim piTotal = PagibigContributionPerDay * daysWorked
-            DataGridView2.Rows(8).Cells(1).Value = piTotal.ToString("C0")
-            deductions += piTotal
-        Else
-            DataGridView2.Rows(8).Cells(1).Value = "Not Registered"
-        End If
-
-        Dim netPay As Double = grossPay - deductions
+        Dim netPay As Double = grossPay - totalDeductionArray(i)
 
         DataGridView2.Rows(0).Cells(1).Value = dailyRate.ToString("C0", philCulture)
         DataGridView2.Rows(1).Cells(1).Value = daysWorked.ToString()
@@ -106,7 +74,10 @@ Public Class PayrollForm
         DataGridView2.Rows(3).Cells(1).Value = overTime.ToString()
         DataGridView2.Rows(4).Cells(1).Value = overTimePay.ToString("C0", philCulture)
         DataGridView2.Rows(5).Cells(1).Value = grossPay.ToString("C0", philCulture)
-        DataGridView2.Rows(9).Cells(1).Value = deductions.ToString("C0", philCulture)
+        DataGridView2.Rows(6).Cells(1).Value = sssTotal.ToString("C0", philCulture)
+        DataGridView2.Rows(7).Cells(1).Value = phTotal.ToString("C0", philCulture)
+        DataGridView2.Rows(8).Cells(1).Value = piTotal.ToString("C0", philCulture)
+        DataGridView2.Rows(9).Cells(1).Value = totalDeductionArray(i).ToString("C0", philCulture)
         DataGridView2.Rows(10).Cells(1).Value = netPay.ToString("C0", philCulture)
 
     End Sub
@@ -115,6 +86,4 @@ Public Class PayrollForm
         Me.Hide()
         RegisterForm.Show()
     End Sub
-
-
 End Class
