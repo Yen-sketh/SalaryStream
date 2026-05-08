@@ -45,7 +45,7 @@
                                    attendaceArray(count), overtimeArray(count))
 
 
-        If Not cBoxEmployee.items.Contains(nameArray(count)) Then
+        If Not cBoxEmployee.Items.Contains(nameArray(count)) Then
             cBoxEmployee.Items.Add(nameArray(count))
 
         End If
