@@ -102,6 +102,7 @@ Partial Class PayrollForm
         ' 
         ' PayrollForm
         ' 
+        AcceptButton = BtnCalculate
         AutoScaleDimensions = New SizeF(12F, 30F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(821, 805)
@@ -113,6 +114,7 @@ Partial Class PayrollForm
         Controls.Add(ComboBox1)
         Margin = New Padding(4)
         Name = "PayrollForm"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "Payroll "
         CType(DataGridView2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
