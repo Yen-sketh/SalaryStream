@@ -45,8 +45,8 @@
                                    attendaceArray(count), overtimeArray(count))
 
 
-        If Not cBoxEmployee.Items.Contains(nameArray(count)) Then
-            cBoxEmployee.Items.Add(nameArray(count))
+        If Not cboxEmployee.Items.Contains(nameArray(count)) Then
+            cboxEmployee.Items.Add(nameArray(count))
 
         End If
 
@@ -68,17 +68,17 @@
         LoginForm.Close()
     End Sub
 
-    Private Sub cBoxEmployee_SelectedIndexChanged(sender As Object, e As EventArgs)
+    Private Sub cBoxEmployee_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboxEmployee.SelectedIndexChanged
 
         'if CBoxEmployee is empty, reset list to original.
-        If cBoxEmployee.SelectedIndex = -1 Then
+        If cboxEmployee.SelectedIndex = -1 Then
             show_original_list()
         Else
             search_employee()
         End If
     End Sub
 
-    Private Sub cBoxPosition_SelectedIndexChanged(sender As Object, e As EventArgs)
+    Private Sub cBoxPosition_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboxPosition.SelectedIndexChanged
 
         'if cBoxPosition is empty, reset list to original.
         If cboxPosition.SelectedIndex = -1 Then
@@ -93,7 +93,7 @@
 
         For i As Integer = 0 To DataGridView1.RowCount - 1
             Dim name_employee = DataGridView1.Rows(i).Cells(0).Value
-            If cBoxEmployee.Text = name_employee Then
+            If cboxEmployee.Text = name_employee Then
                 DataGridView1.Rows(i).Visible = True
             Else
                 DataGridView1.Rows(i).Visible = False
@@ -132,13 +132,13 @@
 
 
     Sub update_list()
-        cBoxEmployee.SelectedIndex = -1
+        cboxEmployee.SelectedIndex = -1
         cboxPosition.SelectedIndex = -1
 
     End Sub
 
     Sub main_list()
-        cBoxEmployee.SelectedIndex = -1
+        cboxEmployee.SelectedIndex = -1
         cboxPosition.SelectedIndex = -1
         show_original_list()
 
@@ -153,12 +153,12 @@
     Sub update_after_delete()
 
         'update combobox list
-        cBoxEmployee.Items.Clear()
+        cboxEmployee.Items.Clear()
         For i As Integer = 0 To DataGridView1.Rows.Count - 1
             Dim afterDelCellValue = DataGridView1.Rows(i).Cells(0).Value
 
-            If Not cBoxEmployee.Items.Contains(afterDelCellValue) Then
-                cBoxEmployee.Items.Add(afterDelCellValue)
+            If Not cboxEmployee.Items.Contains(afterDelCellValue) Then
+                cboxEmployee.Items.Add(afterDelCellValue)
             End If
         Next
 
@@ -214,14 +214,14 @@
         ' Gets Emp_name index
         If e.ColumnIndex = 0 Then
 
-            cBoxEmployee.Items.Clear()
+            cboxEmployee.Items.Clear()
             For i As Integer = 0 To DataGridView1.Rows.Count - 1
                 Dim newName = DataGridView1.Rows(e.RowIndex).Cells(0).Value.ToString().ToUpper()
                 nameArray(e.RowIndex) = newName
 
                 Dim updatedCellName = DataGridView1.Rows(i).Cells(0).Value
-                If Not cBoxEmployee.Items.Contains(updatedCellName) Then
-                    cBoxEmployee.Items.Add(updatedCellName.ToString())
+                If Not cboxEmployee.Items.Contains(updatedCellName) Then
+                    cboxEmployee.Items.Add(updatedCellName.ToString())
                 End If
             Next
         End If
@@ -268,4 +268,7 @@
         update_after_delete()
     End Sub
 
+    Private Sub RegisterForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
