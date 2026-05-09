@@ -268,7 +268,5 @@
         update_after_delete()
     End Sub
 
-    Private Sub RegisterForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-    End Sub
 End Class
