@@ -49,18 +49,18 @@ Partial Class LoginForm
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Segoe UI", 11F)
-        Label2.Location = New Point(207, 137)
+        Label2.Location = New Point(121, 137)
         Label2.Margin = New Padding(2, 0, 2, 0)
         Label2.Name = "Label2"
-        Label2.Size = New Size(81, 36)
+        Label2.Size = New Size(137, 36)
         Label2.TabIndex = 1
-        Label2.Text = "Email:"
+        Label2.Text = "Username:"
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Segoe UI", 11F)
-        Label3.Location = New Point(207, 259)
+        Label3.Location = New Point(125, 259)
         Label3.Margin = New Padding(2, 0, 2, 0)
         Label3.Name = "Label3"
         Label3.Size = New Size(128, 36)
@@ -71,30 +71,30 @@ Partial Class LoginForm
         ' 
         TextBox1.BorderStyle = BorderStyle.FixedSingle
         TextBox1.Font = New Font("Segoe UI", 14F)
-        TextBox1.Location = New Point(154, 178)
+        TextBox1.Location = New Point(72, 178)
         TextBox1.Margin = New Padding(2)
         TextBox1.Name = "TextBox1"
         TextBox1.PlaceholderText = "Juan@email.com"
-        TextBox1.Size = New Size(426, 51)
+        TextBox1.Size = New Size(631, 51)
         TextBox1.TabIndex = 3
         ' 
         ' TextBox2
         ' 
         TextBox2.BorderStyle = BorderStyle.FixedSingle
         TextBox2.Font = New Font("Segoe UI", 14F)
-        TextBox2.Location = New Point(154, 300)
+        TextBox2.Location = New Point(72, 300)
         TextBox2.Margin = New Padding(2)
         TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(426, 51)
+        TextBox2.Size = New Size(631, 51)
         TextBox2.TabIndex = 4
         ' 
         ' btnLogin
         ' 
         btnLogin.Font = New Font("Segoe UI Semibold", 11.1428576F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnLogin.Location = New Point(154, 396)
+        btnLogin.Location = New Point(72, 396)
         btnLogin.Margin = New Padding(2)
         btnLogin.Name = "btnLogin"
-        btnLogin.Size = New Size(426, 55)
+        btnLogin.Size = New Size(631, 55)
         btnLogin.TabIndex = 7
         btnLogin.Text = "Login"
         btnLogin.UseVisualStyleBackColor = True
@@ -112,7 +112,7 @@ Partial Class LoginForm
         ' PictureBox1
         ' 
         PictureBox1.Image = My.Resources.Resources.user_21980
-        PictureBox1.Location = New Point(154, 137)
+        PictureBox1.Location = New Point(72, 137)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(42, 36)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
@@ -122,7 +122,7 @@ Partial Class LoginForm
         ' PictureBox2
         ' 
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(154, 259)
+        PictureBox2.Location = New Point(72, 259)
         PictureBox2.Name = "PictureBox2"
         PictureBox2.Size = New Size(48, 36)
         PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
