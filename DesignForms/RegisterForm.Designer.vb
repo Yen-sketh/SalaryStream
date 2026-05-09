@@ -50,8 +50,8 @@ Partial Class RegisterForm
         btnUpdate = New Button()
         btnMainList = New Button()
         btnDelete = New Button()
-        ComboBox1 = New ComboBox()
         cboxPosition = New ComboBox()
+        cboxEmployee = New ComboBox()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -240,7 +240,7 @@ Partial Class RegisterForm
         ' 
         Label6.AutoSize = True
         Label6.Font = New Font("Segoe UI", 15F)
-        Label6.Location = New Point(48, 390)
+        Label6.Location = New Point(11, 390)
         Label6.Margin = New Padding(2, 0, 2, 0)
         Label6.Name = "Label6"
         Label6.Size = New Size(292, 47)
@@ -311,14 +311,6 @@ Partial Class RegisterForm
         btnDelete.Text = "DELETE"
         btnDelete.UseVisualStyleBackColor = False
         ' 
-        ' ComboBox1
-        ' 
-        ComboBox1.FormattingEnabled = True
-        ComboBox1.Location = New Point(491, 948)
-        ComboBox1.Name = "ComboBox1"
-        ComboBox1.Size = New Size(212, 38)
-        ComboBox1.TabIndex = 36
-        ' 
         ' cboxPosition
         ' 
         cboxPosition.FormattingEnabled = True
@@ -326,6 +318,14 @@ Partial Class RegisterForm
         cboxPosition.Name = "cboxPosition"
         cboxPosition.Size = New Size(357, 38)
         cboxPosition.TabIndex = 37
+        ' 
+        ' cboxEmployee
+        ' 
+        cboxEmployee.FormattingEnabled = True
+        cboxEmployee.Location = New Point(308, 399)
+        cboxEmployee.Name = "cboxEmployee"
+        cboxEmployee.Size = New Size(328, 38)
+        cboxEmployee.TabIndex = 38
         ' 
         ' RegisterForm
         ' 
@@ -335,8 +335,8 @@ Partial Class RegisterForm
         AutoSize = True
         BackColor = Color.FromArgb(CByte(237), CByte(233), CByte(230))
         ClientSize = New Size(1532, 1028)
+        Controls.Add(cboxEmployee)
         Controls.Add(cboxPosition)
-        Controls.Add(ComboBox1)
         Controls.Add(btnDelete)
         Controls.Add(btnMainList)
         Controls.Add(btnUpdate)
@@ -395,6 +395,6 @@ Partial Class RegisterForm
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
-    Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents cboxPosition As ComboBox
+    Friend WithEvents cboxEmployee As ComboBox
 End Class
