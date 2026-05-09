@@ -30,7 +30,7 @@
     End Sub
 
 
-    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+    Private Sub btnClear_Click(sender As Object, e As EventArgs)
         TextBox1.Text = ""
         TextBox2.Text = ""
     End Sub
