@@ -22,6 +22,7 @@ Partial Class LoginForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LoginForm))
         Label1 = New Label()
         Label2 = New Label()
         Label3 = New Label()
@@ -29,6 +30,10 @@ Partial Class LoginForm
         TextBox2 = New TextBox()
         btnLogin = New Button()
         Label4 = New Label()
+        PictureBox1 = New PictureBox()
+        PictureBox2 = New PictureBox()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Label1
@@ -44,7 +49,7 @@ Partial Class LoginForm
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Segoe UI", 11F)
-        Label2.Location = New Point(154, 129)
+        Label2.Location = New Point(207, 137)
         Label2.Margin = New Padding(2, 0, 2, 0)
         Label2.Name = "Label2"
         Label2.Size = New Size(81, 36)
@@ -55,7 +60,7 @@ Partial Class LoginForm
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Segoe UI", 11F)
-        Label3.Location = New Point(154, 251)
+        Label3.Location = New Point(207, 259)
         Label3.Margin = New Padding(2, 0, 2, 0)
         Label3.Name = "Label3"
         Label3.Size = New Size(128, 36)
@@ -104,6 +109,26 @@ Partial Class LoginForm
         Label4.TabIndex = 8
         Label4.Text = "LOG IN TO YOUR ACCOUNT"
         ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.Image = My.Resources.Resources.user_21980
+        PictureBox1.Location = New Point(154, 137)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(42, 36)
+        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox1.TabIndex = 9
+        PictureBox1.TabStop = False
+        ' 
+        ' PictureBox2
+        ' 
+        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
+        PictureBox2.Location = New Point(154, 259)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(48, 36)
+        PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox2.TabIndex = 10
+        PictureBox2.TabStop = False
+        ' 
         ' LoginForm
         ' 
         AcceptButton = btnLogin
@@ -111,6 +136,8 @@ Partial Class LoginForm
         AutoScaleMode = AutoScaleMode.Dpi
         AutoSize = True
         ClientSize = New Size(745, 509)
+        Controls.Add(PictureBox2)
+        Controls.Add(PictureBox1)
         Controls.Add(Label4)
         Controls.Add(btnLogin)
         Controls.Add(TextBox2)
@@ -122,6 +149,8 @@ Partial Class LoginForm
         Name = "LoginForm"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Salary Stream"
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -133,5 +162,7 @@ Partial Class LoginForm
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents btnLogin As Button
     Friend WithEvents Label4 As Label
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
 
 End Class

@@ -34,4 +34,6 @@
         TextBox1.Text = ""
         TextBox2.Text = ""
     End Sub
+
+
 End Class
