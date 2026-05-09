@@ -50,8 +50,8 @@
 
         End If
 
-        If Not cBoxPosition.Items.Contains(positionArray(count)) Then
-            cBoxPosition.Items.Add(positionArray(count))
+        If Not cboxPosition.Items.Contains(positionArray(count)) Then
+            cboxPosition.Items.Add(positionArray(count))
         End If
 
     End Sub
@@ -68,7 +68,7 @@
         LoginForm.Close()
     End Sub
 
-    Private Sub cBoxEmployee_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cBoxEmployee.SelectedIndexChanged
+    Private Sub cBoxEmployee_SelectedIndexChanged(sender As Object, e As EventArgs)
 
         'if CBoxEmployee is empty, reset list to original.
         If cBoxEmployee.SelectedIndex = -1 Then
@@ -78,10 +78,10 @@
         End If
     End Sub
 
-    Private Sub cBoxPosition_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cBoxPosition.SelectedIndexChanged
+    Private Sub cBoxPosition_SelectedIndexChanged(sender As Object, e As EventArgs)
 
         'if cBoxPosition is empty, reset list to original.
-        If cBoxPosition.SelectedIndex = -1 Then
+        If cboxPosition.SelectedIndex = -1 Then
             show_original_list()
         Else
             search_employeePos()
@@ -106,7 +106,7 @@
 
         For i As Integer = 0 To DataGridView1.RowCount - 1
             Dim pos_employee = DataGridView1.Rows(i).Cells(1).Value
-            If cBoxPosition.Text = pos_employee Then
+            If cboxPosition.Text = pos_employee Then
                 DataGridView1.Rows(i).Visible = True
             Else
                 DataGridView1.Rows(i).Visible = False
@@ -133,13 +133,13 @@
 
     Sub update_list()
         cBoxEmployee.SelectedIndex = -1
-        cBoxPosition.SelectedIndex = -1
+        cboxPosition.SelectedIndex = -1
 
     End Sub
 
     Sub main_list()
         cBoxEmployee.SelectedIndex = -1
-        cBoxPosition.SelectedIndex = -1
+        cboxPosition.SelectedIndex = -1
         show_original_list()
 
     End Sub
@@ -163,12 +163,12 @@
         Next
 
         'update position combobox
-        cBoxPosition.Items.Clear()
+        cboxPosition.Items.Clear()
         For i As Integer = 0 To DataGridView1.Rows.Count - 1
             Dim afterDelCellValuePos = DataGridView1.Rows(i).Cells(0).Value
 
-            If Not cBoxPosition.Items.Contains(afterDelCellValuePos) Then
-                cBoxPosition.Items.Add(afterDelCellValuePos)
+            If Not cboxPosition.Items.Contains(afterDelCellValuePos) Then
+                cboxPosition.Items.Add(afterDelCellValuePos)
             End If
         Next
 
@@ -229,15 +229,15 @@
         ' Gets Emp_position index
         If e.ColumnIndex = 1 Then
 
-            cBoxPosition.Items.Clear()
+            cboxPosition.Items.Clear()
 
             'updates 
             For i As Integer = 0 To DataGridView1.Rows.Count - 1
                 Dim newPosition = DataGridView1.Rows(e.RowIndex).Cells(1).Value.ToString().ToUpper()
                 positionArray(e.RowIndex) = newPosition
                 Dim updatedCellPosition = DataGridView1.Rows(i).Cells(1).Value
-                If Not cBoxPosition.Items.Contains(updatedCellPosition) Then
-                    cBoxPosition.Items.Add(updatedCellPosition.ToString())
+                If Not cboxPosition.Items.Contains(updatedCellPosition) Then
+                    cboxPosition.Items.Add(updatedCellPosition.ToString())
                 End If
             Next
 
@@ -267,4 +267,5 @@
         adjustArray(DataGridView1.SelectedRows(0).Index)
         update_after_delete()
     End Sub
+
 End Class

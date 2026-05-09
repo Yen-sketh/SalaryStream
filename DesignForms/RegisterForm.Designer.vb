@@ -47,18 +47,18 @@ Partial Class RegisterForm
         lbl = New Label()
         BtnPayRoll = New Button()
         btnLogOut = New Button()
-        cBoxEmployee = New ComboBox()
-        cBoxPosition = New ComboBox()
         btnUpdate = New Button()
         btnMainList = New Button()
         btnDelete = New Button()
+        ComboBox1 = New ComboBox()
+        cboxPosition = New ComboBox()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(131, 251)
+        Label1.Location = New Point(211, 206)
         Label1.Margin = New Padding(2, 0, 2, 0)
         Label1.Name = "Label1"
         Label1.Size = New Size(74, 30)
@@ -68,7 +68,7 @@ Partial Class RegisterForm
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(131, 331)
+        Label2.Location = New Point(226, 288)
         Label2.Margin = New Padding(2, 0, 2, 0)
         Label2.Name = "Label2"
         Label2.Size = New Size(91, 30)
@@ -78,7 +78,7 @@ Partial Class RegisterForm
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(447, 251)
+        Label3.Location = New Point(578, 206)
         Label3.Margin = New Padding(2, 0, 2, 0)
         Label3.Name = "Label3"
         Label3.Size = New Size(112, 30)
@@ -88,7 +88,7 @@ Partial Class RegisterForm
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(447, 331)
+        Label4.Location = New Point(578, 288)
         Label4.Margin = New Padding(2, 0, 2, 0)
         Label4.Name = "Label4"
         Label4.Size = New Size(125, 30)
@@ -141,7 +141,7 @@ Partial Class RegisterForm
         ' z
         ' 
         z.AutoSize = True
-        z.Location = New Point(787, 251)
+        z.Location = New Point(894, 206)
         z.Margin = New Padding(2, 0, 2, 0)
         z.Name = "z"
         z.Size = New Size(103, 30)
@@ -183,38 +183,38 @@ Partial Class RegisterForm
         ' 
         ' Column1
         ' 
+        Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
         Column1.HeaderText = "Name"
         Column1.MinimumWidth = 9
         Column1.Name = "Column1"
-        Column1.Width = 175
         ' 
         ' Column2
         ' 
+        Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
         Column2.HeaderText = "Position"
         Column2.MinimumWidth = 9
         Column2.Name = "Column2"
-        Column2.Width = 175
         ' 
         ' Column3
         ' 
+        Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
         Column3.HeaderText = "Daily Rate"
         Column3.MinimumWidth = 9
         Column3.Name = "Column3"
-        Column3.Width = 175
         ' 
         ' Column4
         ' 
+        Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
         Column4.HeaderText = "Attendance (days worked)"
         Column4.MinimumWidth = 9
         Column4.Name = "Column4"
-        Column4.Width = 175
         ' 
         ' Column5
         ' 
+        Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
         Column5.HeaderText = "Overtime (in hrs)"
         Column5.MinimumWidth = 9
         Column5.Name = "Column5"
-        Column5.Width = 175
         ' 
         ' btnDone
         ' 
@@ -260,16 +260,19 @@ Partial Class RegisterForm
         ' 
         ' BtnPayRoll
         ' 
+        BtnPayRoll.BackColor = Color.FromArgb(CByte(192), CByte(255), CByte(192))
+        BtnPayRoll.FlatStyle = FlatStyle.Popup
         BtnPayRoll.Location = New Point(1063, 866)
         BtnPayRoll.Margin = New Padding(4)
         BtnPayRoll.Name = "BtnPayRoll"
         BtnPayRoll.Size = New Size(429, 68)
         BtnPayRoll.TabIndex = 25
         BtnPayRoll.Text = "Calculate  Payroll"
-        BtnPayRoll.UseVisualStyleBackColor = True
+        BtnPayRoll.UseVisualStyleBackColor = False
         ' 
         ' btnLogOut
         ' 
+        btnLogOut.FlatStyle = FlatStyle.Popup
         btnLogOut.Location = New Point(48, 866)
         btnLogOut.Margin = New Padding(2)
         btnLogOut.Name = "btnLogOut"
@@ -278,24 +281,9 @@ Partial Class RegisterForm
         btnLogOut.Text = "Logout"
         btnLogOut.UseVisualStyleBackColor = True
         ' 
-        ' cBoxEmployee
-        ' 
-        cBoxEmployee.FormattingEnabled = True
-        cBoxEmployee.Location = New Point(336, 399)
-        cBoxEmployee.Name = "cBoxEmployee"
-        cBoxEmployee.Size = New Size(268, 38)
-        cBoxEmployee.TabIndex = 31
-        ' 
-        ' cBoxPosition
-        ' 
-        cBoxPosition.FormattingEnabled = True
-        cBoxPosition.Location = New Point(1134, 401)
-        cBoxPosition.Name = "cBoxPosition"
-        cBoxPosition.Size = New Size(212, 38)
-        cBoxPosition.TabIndex = 32
-        ' 
         ' btnUpdate
         ' 
+        btnUpdate.FlatStyle = FlatStyle.Popup
         btnUpdate.Location = New Point(483, 866)
         btnUpdate.Name = "btnUpdate"
         btnUpdate.Size = New Size(573, 68)
@@ -314,12 +302,30 @@ Partial Class RegisterForm
         ' 
         ' btnDelete
         ' 
+        btnDelete.BackColor = Color.Salmon
+        btnDelete.FlatStyle = FlatStyle.Popup
         btnDelete.Location = New Point(483, 940)
         btnDelete.Name = "btnDelete"
         btnDelete.Size = New Size(573, 68)
         btnDelete.TabIndex = 35
         btnDelete.Text = "DELETE"
-        btnDelete.UseVisualStyleBackColor = True
+        btnDelete.UseVisualStyleBackColor = False
+        ' 
+        ' ComboBox1
+        ' 
+        ComboBox1.FormattingEnabled = True
+        ComboBox1.Location = New Point(491, 948)
+        ComboBox1.Name = "ComboBox1"
+        ComboBox1.Size = New Size(212, 38)
+        ComboBox1.TabIndex = 36
+        ' 
+        ' cboxPosition
+        ' 
+        cboxPosition.FormattingEnabled = True
+        cboxPosition.Location = New Point(1134, 401)
+        cboxPosition.Name = "cboxPosition"
+        cboxPosition.Size = New Size(357, 38)
+        cboxPosition.TabIndex = 37
         ' 
         ' RegisterForm
         ' 
@@ -329,11 +335,11 @@ Partial Class RegisterForm
         AutoSize = True
         BackColor = Color.FromArgb(CByte(237), CByte(233), CByte(230))
         ClientSize = New Size(1532, 1028)
+        Controls.Add(cboxPosition)
+        Controls.Add(ComboBox1)
         Controls.Add(btnDelete)
         Controls.Add(btnMainList)
         Controls.Add(btnUpdate)
-        Controls.Add(cBoxPosition)
-        Controls.Add(cBoxEmployee)
         Controls.Add(btnLogOut)
         Controls.Add(BtnPayRoll)
         Controls.Add(lbl)
@@ -375,20 +381,20 @@ Partial Class RegisterForm
     Friend WithEvents Label5 As Label
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents btnDone As Button
     Friend WithEvents btnClear As Button
     Friend WithEvents Label6 As Label
     Friend WithEvents lbl As Label
     Friend WithEvents BtnPayRoll As Button
     Friend WithEvents btnLogOut As Button
-    Friend WithEvents cBoxEmployee As ComboBox
-    Friend WithEvents cBoxPosition As ComboBox
     Friend WithEvents btnUpdate As Button
     Friend WithEvents btnMainList As Button
     Friend WithEvents btnDelete As Button
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents cboxPosition As ComboBox
 End Class
